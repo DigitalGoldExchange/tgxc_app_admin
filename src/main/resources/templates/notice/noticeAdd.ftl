@@ -1,0 +1,64 @@
+<#include "/layout/sidebar.ftl">
+<#include "/layout/base_script.ftl">
+<script src="/assets/js/notice/noticeAdd.js"></script>
+<!-- ============================================================== -->
+<!-- Page Content -->
+<!-- ============================================================== -->
+<div id="page-wrapper">
+    <div class="container-fluid col-md-9 col-lg-8 col-sm-12">
+        <!-- ============================================================== -->
+        <!-- Different data widgets -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <form id="insertNotice" method="post">
+                <div class="fmain-paymentlist-row m-2 justify-content-between align-items-center">
+                    <div class="main-text col-auto ">공지관리</div>
+                </div>
+
+                <div class="fmain-row" style="justify-content: center;margin-top: 50px;">
+                    <div class="col-auto mb-2">
+                        <div class="mb-2">Input label</div>
+                        <input type="text" size="30" id="title" name="title" class="form-control" placeholder="Text input"/>
+                    </div>
+                </div>
+
+                <div class="fmain-row mt-4" style="justify-content: center;">
+                    <textarea id="contents" name="contents" cols="32" rows="7"></textarea>
+                </div>
+
+                <div class="fmain-row mt-4" style="justify-content: center;">
+                    <div class="col-auto mb-2">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="koreanYn1" name="koreanYn" checked value="Y">
+                            <label class="form-check-label" for="koreanYn1">한글</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="koreanYn2" name="koreanYn" value="N">
+                            <label class="form-check-label" for="koreanYn2">영문</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="fmain-row mt-4" style="justify-content: center;">
+                <div class="col-auto mb-2">
+                    <button type="button" class="btn-total-view" id="noticeInsert"><span>공지작성</span></button>
+                    <button type="button" class="btn-total-view" onClick=goNoticeList() ><span>취소</span></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Page Content -->
+<!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+
+</body>
+
+</html>

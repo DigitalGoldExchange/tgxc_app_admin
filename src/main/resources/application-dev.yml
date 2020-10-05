@@ -1,0 +1,41 @@
+server:
+  port: 8094
+
+
+logging:
+  config: classpath:logback.xml
+
+spring:
+  profiles:
+    active: dev
+  banner:
+    location: banner.txt
+  mvc:
+    favicon:
+      enabled: false
+  mail:
+    host: smtp.gmail.com
+    port: 465
+    username: alex@laidback.co.kr
+    password: '12341234'
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          start-tls-enable: true
+          auth: true
+          ssl:
+            enable: true
+        transport:
+          protocol: smtps
+    default-encoding: UTF-8
+  devtools:
+    livereload:
+      enabled: true
+  freemarker:
+    cache: false
+api:
+  url: http://localhost:8093
+
+
+

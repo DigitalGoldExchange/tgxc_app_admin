@@ -1,0 +1,110 @@
+15:56:57 - Starting FrontendApplication on laidbackui-MacBook-Pro.local with PID 3194 (/Users/laidback_tony/IdeaProjects/dgex_frontend/build/classes/java/main started by laidback_tony in /Users/laidback_tony/IdeaProjects/dgex_frontend) 
+15:56:57 - The following profiles are active: dev 
+15:56:57 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+15:56:57 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+15:56:58 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1f726ffd' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+15:56:58 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+15:56:59 - Tomcat initialized with port(s): 8094 (http) 
+15:56:59 - Initializing ProtocolHandler ["http-nio-8094"] 
+15:56:59 - Starting service [Tomcat] 
+15:56:59 - Starting Servlet engine: [Apache Tomcat/9.0.36] 
+15:56:59 - Initializing Spring embedded WebApplicationContext 
+15:56:59 - Root WebApplicationContext: initialization completed in 1450 ms 
+15:56:59 - 
+
+Using generated security password: a4a98387-fee4-40c8-80ad-aad68eb1cb6e
+ 
+15:56:59 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@382c99c1, org.springframework.security.web.context.SecurityContextPersistenceFilter@7f449176, org.springframework.security.web.header.HeaderWriterFilter@3563c331, org.springframework.security.web.authentication.logout.LogoutFilter@2e482c96, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@63ec3993, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6acd82d3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62b6b9bd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1141d35, org.springframework.security.web.session.SessionManagementFilter@40741612, org.springframework.security.web.access.ExceptionTranslationFilter@130462d4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@777d338b] 
+15:57:00 - Initializing ExecutorService 'applicationTaskExecutor' 
+15:57:00 - LiveReload server is running on port 35729 
+15:57:00 - Starting ProtocolHandler ["http-nio-8094"] 
+15:57:00 - Tomcat started on port(s): 8094 (http) with context path '' 
+15:57:00 - Started FrontendApplication in 3.343 seconds (JVM running for 4.129) 
+15:59:02 - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+15:59:02 - Initializing Servlet 'dispatcherServlet' 
+15:59:02 - Completed initialization in 13 ms 
+15:59:03 - 
+/ ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/
+/ ===============================================> end1 [0.058 Sec] 
+ 
+15:59:03 - 
+/assets/js/script.js ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/js/script.js
+/assets/js/script.js ===============================================> end1 [0.01 Sec] 
+ 
+15:59:03 - 
+/assets/js/jquery-3.4.1.min.js ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/js/jquery-3.4.1.min.js
+/assets/js/jquery-3.4.1.min.js ===============================================> end1 [0.011 Sec] 
+ 
+15:59:03 - 
+/favicon.ico ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/favicon.ico
+/favicon.ico ===============================================> end1 [0.001 Sec] 
+ 
+15:59:03 - 
+/error ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/error
+/error ===============================================> end1 [0.049 Sec] 
+ 
+15:59:03 - 
+/login ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/login
+/login ===============================================> end1 [0.073 Sec] 
+ 
+15:59:03 - 
+/assets/css/login_style.css ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/css/login_style.css
+/assets/css/login_style.css ===============================================> end1 [0.004 Sec] 
+ 
+15:59:03 - 
+/assets/js/script.js ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/js/script.js
+/assets/js/script.js ===============================================> end1 [0.004 Sec] 
+ 
+15:59:03 - 
+/assets/images/laidback_logo_B.png ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/images/laidback_logo_B.png
+/assets/images/laidback_logo_B.png ===============================================> end1 [0.006 Sec] 
+ 
+15:59:03 - 
+/assets/css/login_bootstrap.css ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/css/login_bootstrap.css
+/assets/css/login_bootstrap.css ===============================================> end1 [0.013 Sec] 
+ 
+15:59:03 - 
+/assets/js/jquery-3.4.1.min.js ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/js/jquery-3.4.1.min.js
+/assets/js/jquery-3.4.1.min.js ===============================================> end1 [0.012 Sec] 
+ 
+15:59:03 - 
+/assets/js/main/login.js ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/js/main/login.js
+/assets/js/main/login.js ===============================================> end1 [0.011 Sec] 
+ 
+15:59:03 - 
+/static/assets/delete/css/bootstrap.min.css ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/static/assets/delete/css/bootstrap.min.css
+/static/assets/delete/css/bootstrap.min.css ===============================================> end1 [0.001 Sec] 
+ 
+15:59:03 - 
+/error ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/error
+/error ===============================================> end1 [0.002 Sec] 
+ 
+19:30:27 - Shutting down ExecutorService 'applicationTaskExecutor' 
