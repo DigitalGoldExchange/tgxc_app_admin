@@ -31,11 +31,10 @@ function login() {
             if(response.data.result) {
                 console.log(response);
                 // return false;
-
-                setCookie('emailId', response.data.emailId, 7);
-                setCookie('name', response.data.name, 7);
-                setCookie('userId', response.data.userId, 7);
-                setCookie('level', response.data.level, 7);
+                setCookie('emailId', response.data.user.emailId, 7);
+                setCookie('name', response.data.user.name, 7);
+                setCookie('userId', response.data.user.userId, 7);
+                setCookie('level', response.data.user.level, 7);
                 location.href='/change/changeReq';
                 // if(response.data.level==10){
                 //     location.href='/main/adminMain';

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -19,8 +20,9 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/admin/adminInfoDetail", method = RequestMethod.GET)
-    public ModelAndView manageInfoDetail(ModelAndView mav) {
+    public ModelAndView manageInfoDetail(ModelAndView mav, @RequestParam("level") String level ) {
         mav.addObject("apiAddress",apiAddress);
+        mav.addObject("level",level);
         mav.setViewName("/admin/adminInfoDetail");
         return mav;
     }

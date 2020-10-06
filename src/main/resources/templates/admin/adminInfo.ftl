@@ -20,7 +20,7 @@
             </div>
             <div class="fmain-row mt-4" style="justify-content: center;">
                 <div class="col-auto mb-2">
-                    <button type="button" class="btn-total-view" onClick=goAdminUpdate()><span>확인</span></button>
+                    <button type="button" class="btn-total-view" id="checkAdmin"><span>확인</span></button>
                     <button type="button" class="btn-total-view" onClick=goMain()><span>취소</span></button>
                 </div>
             </div>

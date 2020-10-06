@@ -6,7 +6,6 @@ $(function () {
 
         var title = $("#title").val();
         var contents = $("#contents").val();
-        //MAC주소 유효성 검사
         if(title == '' ){
             alert("제목을 입력해주세요.");
             return false;

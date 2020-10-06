@@ -27,14 +27,14 @@
             </div>
             <div class="fmain-col-grid2">
                 <div class="form-check form-check-inline mr-3" style="margin-right: 100px">
-                    <input class="form-check-input" type="checkbox" name="receiveType" id="receiveType_0" value="0" checked>
+                    <input class="form-check-input receiveType" type="checkbox" name="receiveType" id="receiveType_visit" value="visit">
                     <label class="form-check-label" for="receiveType_0">방문수령</label>
                 </div>
                 <div class="form-check form-check-inline mr-3" style="margin-right: 18px">
-                    <input class="form-check-input" type="checkbox" name="receiveType" id="receiveType_1" value="1">
+                    <input class="form-check-input receiveType" type="checkbox" name="receiveType" id="receiveType_mail" value="mail">
                     <label class="form-check-label" for="receiveType_1">우편수령</label>
                 </div>
-                <button type="button" class="btn-total-view" onClick=toPaymentList()><span>저장</span></button>
+                <button type="button" class="btn-total-view" id="saveReceiveType"><span>저장</span></button>
 
             </div>
             <div class="update-info-text-underline"></div>

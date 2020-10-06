@@ -34,14 +34,7 @@
                             <th style="text-align: center">교환매장관리</th>
                         </tr>
                         </thead>
-                        <tbody id="recentPaymentList">
-                        <#--                                <tr>-->
-                        <#--                                    <td>2020/07/01 18:33</td>-->
-                        <#--                                    <td>MAC주소</td>-->
-                        <#--                                    <td>서울특별시 용산구 이태원 333-45번길</td>-->
-                        <#--                                    <td>현금</td>-->
-                        <#--                                    <td><span>15,000원</span></td>-->
-                        <#--                                </tr>-->
+                        <tbody id="manageList">
                         </tbody>
                     </table>
                 </div>
@@ -50,8 +43,8 @@
             <div class="fmain-paymentlist-row m-2 justify-content-between align-items-center">
                 <div class="main-text col-auto "></div>
                 <div class="col-auto mb-2">
-                    <button type="button" class="btn-total-view" onClick=toPaymentList()><span>저장</span></button>
-                    <button type="button" class="btn-total-view" onClick=toPaymentList()><span>취소</span></button>
+                    <button type="button" class="btn-total-view" id="saveManageInfo"><span>저장</span></button>
+                    <button type="button" class="btn-total-view" onClick=goMain()><span>취소</span></button>
                 </div>
             </div>
 

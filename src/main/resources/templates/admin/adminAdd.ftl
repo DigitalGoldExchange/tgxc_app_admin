@@ -1,6 +1,6 @@
 <#include "/layout/sidebar.ftl">
 <#include "/layout/base_script.ftl">
-<script src="/assets/js/admin/adminInfoDetail.js"></script>
+<script src="/assets/js/admin/adminAdd.js"></script>
 <!-- ============================================================== -->
 <!-- Page Content -->
 <!-- ============================================================== -->
@@ -14,13 +14,13 @@
             <div class="fmain-row" style="justify-content: center; margin-top: 50px;">
                 <div class="col-auto mb-2">
                     <div class="mb-2">이름</div>
-                    <input type="password" size="30" id="password" name="password" class="form-control" placeholder="이름을 입력해주세요."/>
+                    <input type="text" size="30" id="name" name="name" class="form-control" placeholder="이름을 입력해주세요."/>
                 </div>
             </div>
             <div class="fmain-row mt-4" style="justify-content: center;">
                 <div class="col-auto mb-2">
                     <div class="mb-2">이메일 주소</div>
-                    <input type="password" size="30" id="password" name="password" class="form-control" placeholder="이메일 주소를 입력해주세요."/>
+                    <input type="text" size="30" id="emailId" name="emailId" class="form-control" placeholder="이메일 주소를 입력해주세요."/>
                 </div>
             </div>
             <div class="fmain-row mt-4" style="justify-content: center;">
@@ -33,27 +33,27 @@
                 <div class="col-auto mb-2">
                     <div class="mb-2">권한설정</div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="itemDiv1" name="itemDivArray" value="1">
-                        <label class="form-check-label" for="itemDiv1">TG 교환 관리</label>
+                        <input class="form-check-input menuLevel" type="checkbox" id="level_exchange" name="menuLevel" value="exchange">
+                        <label class="form-check-label" for="menuLevel">TG 교환 관리</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="itemDiv1" name="itemDivArray" value="1">
-                        <label class="form-check-label" for="itemDiv1">회원정보관리</label>
+                        <input class="form-check-input menuLevel" type="checkbox" id="level_user" name="menuLevel" value="user">
+                        <label class="form-check-label" for="menuLevel">회원정보관리</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="itemDiv1" name="itemDivArray" value="1">
-                        <label class="form-check-label" for="itemDiv1">공지관리</label>
+                        <input class="form-check-input menuLevel" type="checkbox" id="level_notice" name="menuLevel" value="notice">
+                        <label class="form-check-label" for="menuLevel">공지관리</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="itemDiv1" name="itemDivArray" value="1">
-                        <label class="form-check-label" for="itemDiv1">교환매장관리</label>
+                        <input class="form-check-input menuLevel" type="checkbox" id="level_store" name="menuLevel" value="store">
+                        <label class="form-check-label" for="menuLevel">교환매장관리</label>
                     </div>
                 </div>
             </div>
             <div class="fmain-row mt-4" style="justify-content: center;">
                 <div class="col-auto mb-2">
-                    <button type="button" class="btn-total-view" ><span>추가</span></button>
-                    <button type="button" class="btn-total-view" ><span>취소</span></button>
+                    <button type="button" class="btn-total-view" id="addAdmin"><span>추가</span></button>
+                    <button type="button" class="btn-total-view" onClick=goMain()><span>취소</span></button>
                 </div>
             </div>
         </div>
