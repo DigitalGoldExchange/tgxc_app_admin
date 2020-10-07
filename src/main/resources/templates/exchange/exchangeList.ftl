@@ -4,6 +4,32 @@
 <!-- ============================================================== -->
 <!-- Page Content -->
 <!-- ============================================================== -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <b id="modal-top-title">매장 등록</b>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tbody>
+                    <th>추가하실 매장명을 입력해주세요.</th>
+                    <tr>
+                        <td><input type="text" class="form-control" name="name" id="name" maxlength="25"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-primary" id="submit_btn">등록</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="page-wrapper">
     <div class="container-fluid col-md-9 col-lg-8 col-sm-12">
         <!-- ============================================================== -->
@@ -43,6 +69,54 @@
                 <div class="main-text col-auto ">교환 매장 관리</div>
             </div>
             <div class="fmain-col-grid2">
+                <div class="fmain-row m-2">
+                    <div class="fmain-col">
+                        <div class="form-check-label">비활성 매장</div>
+                        <div class="fmain-paymentlist-row m-2 justify-content-between align-items-center">
+                            <div class="main-text col-auto "></div>
+                            <div class="col-auto mb-2">
+                                <button type="button" class="btn-total-view" id="updateActive"><span>활성화</span></button>
+                                <button type="button" class="btn-total-view" data-toggle="modal" data-target="#myModal"><span>추가</span></button>
+                                <button type="button" class="btn-total-view" id="deleteStore"><span>삭제</span></button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th style="text-align: center;width: 20px;"><input class="ml-3" type="checkbox" id="inactiveAllCheck" value="" aria-label="..."></th>
+                                    <th style="text-align: center">매장명</th>
+                                </tr>
+                                </thead>
+                                <tbody id="inactiveStoreList">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="fmain-col">
+                        <div class="form-check-label">활성 매장</div>
+                        <div class="fmain-paymentlist-row m-2 justify-content-between align-items-center">
+                            <div class="main-text col-auto "></div>
+                            <div class="col-auto mb-2">
+                                <button type="button" class="btn-total-view" id="updateInactive"><span>비활성화</span></button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th style="text-align: center;width: 20px;"><input class="ml-3" type="checkbox" id="activeAllCheck" value="" aria-label="..."></th>
+                                    <th style="text-align: center">매장명</th>
+                                </tr>
+                                </thead>
+                                <tbody id="activeStoreList">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 

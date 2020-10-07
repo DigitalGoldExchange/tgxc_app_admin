@@ -15,7 +15,7 @@ $(function () {
             alert("관리자 이메일을 입력해주세요.");
             return false;
         }
-        if(password == '' ){
+        if(pw == '' ){
             alert("초기 비밀번호를 입력해주세요.");
             return false;
         }
