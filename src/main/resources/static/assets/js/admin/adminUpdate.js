@@ -12,60 +12,49 @@ $(function () {
 
         var menuLevelArray = new Array();
 
-        // var fileValue = $("input[name='userId']").length;
-        // var fileData = new Array(fileValue);
-        // for(var i=0; i<fileValue; i++){
-        //     // fileData[i] = $("input[name='userId']")[i].value;
-        //     fileData.push($("input[name='userId']")[i].value);
-        //     $(".menuLevel").each(function(){
-        //         if($(this).is(":checked")){
-        //             fileData.push($("input[name='menuLevel']")[i].value);
+        // var userValue = $("input[name='userId']").length;
+        //
+        // for(var i=0; i<userValue; i++) {
+        //     menuLevelArray.push($("input[name='userId']")[i].value);
+        //     $(".menuLevel_"+i).each(function () {
+        //         if ($(this).is(":checked")) {
+        //             menuLevelArray.push($(this).val());
         //         }
         //     });
         // }
-        // alert(fileData);
+        $(".rowData").each(function(i){
+            var userId = $(this).find(".userId").val();
+            var checkArr = [];
+            $(".menuLevel_"+i).each(function(){
+                if($(this).is(":checked")){
+                    // console.log(userId,$(this).val());
+                    checkArr.push($(this).val());
+                }
+            });
+            var result = userId+"|"+checkArr.join(",");
+            menuLevelArray.push(result);
 
+        });
 
-
-        var userValue = $("input[name='userId']").length;
-        var levelValue = $("input[name='menuLevel']")[0].length;
-        alert(levelValue);
-        for(var i=0; i<userValue; i++) {
-            menuLevelArray.push($("input[name='userId']")[i].value);
-            if($("input[name='menuLevel']").is(":checked")){
-                menuLevelArray.push($("input[name='menuLevel']")[i].value);
+        var datas = menuLevelArray.join(";");
+        console.log(datas);
+        $.ajax({
+            url: api+'/user/updateLevel',
+            type: 'post',
+            dataType: 'json',
+            data: "level="+datas,
+            success: function(response) {
+                console.log(response);
+                if(response.success){
+                    alert("정상적으로 저장되었습니다.");
+                    location.reload();
+                }else{
+                    alert("실패했습니다.");
+                }
+            },error: function(xhr, ajaxOptions, thrownError) {
+                alert("오류가 발생했습니다.");
             }
-            // $(".menuLevel").each(function () {
-            //     if ($(this).is(":checked")) {
-            //         menuLevelArray.push($(this).val());
-            //     }
-            // });
-        }
-
-        alert(menuLevelArray);
-        // {1|exchange,notice}
-        // {2|notice}
-
-
-
-        //userId
-
-        // $.ajax({
-        //     url: api+'/user/insertAdmin?name='+name+"&password="+pw+"&emailId="+emailId+"&menuLevel="+menuLevelArray,
-        //     type: 'post',
-        //     dataType: 'json',
-        //     success: function(response) {
-        //         console.log(response);
-        //         if(response.success){
-        //             alert("관리자가 추가되었습니다.");
-        //             document.location.href="/change/changeReq";
-        //         }else{
-        //             alert(response.msg);
-        //         }
-        //     },error: function(xhr, ajaxOptions, thrownError) {
-        //         alert("오류가 발생했습니다.");
-        //     }
-        // });
+        });
 
 
     });
@@ -89,14 +78,14 @@ function getList(callback) {
                 if (list.length > 0) {
                     for (var i = 0; i < list.length; i++) {
 
-                        html += '<tr>'
-                            + '<input type="hidden"  id="userId" name="userId" value="'+list[i].userId+'">'
+                        html += '<tr class="rowData">'
+                            + '<input type="hidden" class="userId" name="userId" value="'+list[i].userId+'">'
                             + '<td style="text-align: center">' + list[i].name + '</td>'
                             + '<td style="text-align: center">' + list[i].emailId + '</td>'
-                            + '<td style="text-align: center" class="td"><input class="menuLevel" type="checkbox" id="level_exchange" name="menuLevel[]" value="exchange"';if(list[i].menuLevel.includes("exchange")){html+='checked';}html+='></td>'
-                            + '<td style="text-align: center" class="td"><input class="menuLevel" type="checkbox" id="level_user" name="menuLevel[]" value="user"';if(list[i].menuLevel.includes("user")){html+='checked';}html+='></td>'
-                            + '<td style="text-align: center" class="td"><input class="menuLevel" type="checkbox" id="level_notice" name="menuLevel[]" value="notice"';if(list[i].menuLevel.includes("notice")){html+='checked';}html+='></td>'
-                            + '<td style="text-align: center" class="td"><input class="menuLevel" type="checkbox" id="level_store" name="menuLevel[]" value="store"';if(list[i].menuLevel.includes("store")){html+='checked';}html+='></td>'
+                            + '<td style="text-align: center" class="td"><input class="menuLevel_'+i+'" type="checkbox" name="menuLevel" value="exchange"';if(list[i].menuLevel.includes("exchange")){html+='checked';}html+='></td>'
+                            + '<td style="text-align: center" class="td"><input class="menuLevel_'+i+'" type="checkbox" name="menuLevel" value="user"';if(list[i].menuLevel.includes("user")){html+='checked';}html+='></td>'
+                            + '<td style="text-align: center" class="td"><input class="menuLevel_'+i+'" type="checkbox" name="menuLevel" value="notice"';if(list[i].menuLevel.includes("notice")){html+='checked';}html+='></td>'
+                            + '<td style="text-align: center" class="td"><input class="menuLevel_'+i+'" type="checkbox" name="menuLevel" value="store"';if(list[i].menuLevel.includes("store")){html+='checked';}html+='></td>'
                             + '<td style="text-align: center">' + moment(list[i].createDatetime).format('YYYY-MM-DD') + '</td>'
                             + '<td style="text-align: center">-</td>'
                             + '</tr>';
