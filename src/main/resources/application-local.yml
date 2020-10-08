@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8094
 
 
 logging:
@@ -35,7 +35,7 @@ spring:
   freemarker:
     cache: false
 api:
-  url: http://117.52.98.39:8080
+  url: http://117.52.98.39:8093
 
 
 
