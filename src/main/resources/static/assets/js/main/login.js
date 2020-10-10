@@ -92,3 +92,7 @@ function findPassWord() {
         }
     });
 }
+
+function changeLanguage() {
+    document.location.href = '/login?language=en';
+}

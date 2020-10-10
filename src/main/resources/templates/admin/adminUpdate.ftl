@@ -31,7 +31,7 @@
                             <th style="text-align: center">교환관리</th>
                             <th style="text-align: center">회원정보관리</th>
                             <th style="text-align: center">공지관리</th>
-                            <th style="text-align: center">교환매장관리</th>
+                            <th style="text-align: center">교환관리</th>
                         </tr>
                         </thead>
                         <tbody id="manageList">

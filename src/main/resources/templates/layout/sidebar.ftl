@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/plugins/images/264.png">
     <title>DGEX</title>
     <!-- Bootstrap Core CSS -->
     <link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Menu CSS -->
     <link href="/assets/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/less/icons/font-awesome/css/font-awesome.min.css">
 <#--    <!-- toast CSS &ndash;&gt;-->
 <#--    <link href="/assets/plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">-->
     <!-- morris CSS -->

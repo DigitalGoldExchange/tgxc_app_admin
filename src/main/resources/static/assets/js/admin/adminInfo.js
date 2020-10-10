@@ -20,7 +20,7 @@ $(function () {
             success: function(response) {
                 console.log(response);
                 if(response.data.result){
-                    document.location.href="/admin/adminInfoDetail?level="+level;
+                    document.location.href="/admin/adminInfoDetail?level="+level+"&userId="+userId;
                 }else{
                     alert("비밀번호가 일치하지 않습니다.");
                 }

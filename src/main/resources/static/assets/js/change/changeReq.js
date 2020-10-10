@@ -11,7 +11,45 @@ $(function () {
     });
 
 
+
+
+
 });
+
+function doReject(exchangeId) {
+    $('#myModal').modal('show');
+
+    $("#submit_btn").click(function () {
+
+        var note = $("#note").val();
+        if(note == '' ) {
+            alert("반려사유를 입력해주세요.");
+            return false;
+        }
+        if(confirm("반려 처리 하시겠습니까?") == false){
+            return false;
+        }
+        var api = $("#apiAddress").val();
+
+        $.ajax({
+            url: api+'/exchange/update?exchangeId='+exchangeId+'&status='+$("#reqStatus").val()+"&note="+note,
+            type: 'post',
+            dataType: 'json',
+            success: function(response) {
+                if(response.success){
+                    alert("반려 처리되었습니다.");
+                    location.reload();
+                }else{
+                    alert(response.msg);
+                }
+            },error: function(xhr, ajaxOptions, thrownError) {
+                alert("등록중 오류가 발생했습니다.");
+            }
+        });
+
+    });
+}
+
 
 function goChangeReqDetail(exchangeId) {
     document.location.href = '/change/changeReqDetail?exchangeId='+exchangeId;
@@ -21,6 +59,11 @@ function updateStatus(exchangeId) {
 
     var api = $("#apiAddress").val();
 
+
+    if($("#reqStatus").val() == "반려"){
+        doReject(exchangeId);
+        return false;
+    }
     var msg = "";
     if($("#reqStatus").val() == "완료"){
         msg = "완료 처리 하시겠습니까?";
@@ -29,12 +72,7 @@ function updateStatus(exchangeId) {
     }else if($("#reqStatus").val() == "취소"){
         msg = "취소 처리 하시겠습니까?";
     }
-
-    if($("#reqStatus").val() == "반려"){
-        msg = "반려하시겠습니까?";
-    }
-
-    if(confirm(msg) == false){
+    if(confirm(msg) === false){
         return false;
     }
 
@@ -56,6 +94,10 @@ function updateStatus(exchangeId) {
 
 
 }
+
+
+
+
 
 function getList(callback) {
 

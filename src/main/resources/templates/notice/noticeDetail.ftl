@@ -1,11 +1,12 @@
 <#include "/layout/sidebar.ftl">
 <#include "/layout/base_script.ftl">
-<script src="/assets/js/notice/noticeAdd.js"></script>
+<script src="/assets/js/notice/noticeDetail.js"></script>
 <!-- ============================================================== -->
 <!-- Page Content -->
 <!-- ============================================================== -->
 <div id="page-wrapper">
     <div class="container-fluid col-md-9 col-lg-8 col-sm-12">
+        <input type="hidden" id="noticeId" value="${noticeId?string}">
         <!-- ============================================================== -->
         <!-- Different data widgets -->
         <!-- ============================================================== -->
@@ -18,7 +19,7 @@
                 <div class="fmain-row" style="justify-content: center;margin-top: 50px;">
                     <div class="col-auto mb-2">
                         <div class="mb-2">제목</div>
-                        <input type="text" size="30" id="title" name="title" class="form-control" placeholder="Text input"/>
+                        <input type="text" size="30" id="title" name="title" class="form-control"/>
                     </div>
                 </div>
 
@@ -29,7 +30,7 @@
                 <div class="fmain-row mt-4" style="justify-content: center;">
                     <div class="col-auto mb-2">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="koreanYn1" name="koreanYn" checked value="Y">
+                            <input class="form-check-input" type="radio" id="koreanYn1" name="koreanYn" value="Y">
                             <label class="form-check-label" for="koreanYn1">한글</label>
                         </div>
                         <div class="form-check form-check-inline">
@@ -42,7 +43,7 @@
 
             <div class="fmain-row mt-4" style="justify-content: center;">
                 <div class="col-auto mb-2">
-                    <button type="button" class="btn-total-view" id="noticeInsert"><span>공지작성</span></button>
+                    <button type="button" class="btn-total-view" id="noticeUpdate"><span>수정</span></button>
                     <button type="button" class="btn-total-view" onClick=goNoticeList() ><span>취소</span></button>
                 </div>
             </div>

@@ -20,9 +20,10 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/admin/adminInfoDetail", method = RequestMethod.GET)
-    public ModelAndView manageInfoDetail(ModelAndView mav, @RequestParam("level") String level ) {
+    public ModelAndView manageInfoDetail(ModelAndView mav, @RequestParam("level") String level, @RequestParam("userId") String userId ) {
         mav.addObject("apiAddress",apiAddress);
         mav.addObject("level",level);
+        mav.addObject("userId",userId);
         mav.setViewName("/admin/adminInfoDetail");
         return mav;
     }

@@ -46,7 +46,7 @@
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input menuLevel" type="checkbox" id="level_store" name="menuLevel" value="store">
-                        <label class="form-check-label" for="menuLevel">교환매장관리</label>
+                        <label class="form-check-label" for="menuLevel">교환관리</label>
                     </div>
                 </div>
             </div>

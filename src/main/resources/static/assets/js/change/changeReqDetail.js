@@ -4,6 +4,46 @@ $(function () {
     getList();
 });
 
+function updateStatus(exchangeId) {
+
+    var api = $("#apiAddress").val();
+
+    var msg = "";
+    if($("#reqStatus").val() == "완료"){
+        msg = "완료 처리 하시겠습니까?";
+    }else if($("#reqStatus").val() == "승인"){
+        msg = "승인하시겠습니까?";
+    }else if($("#reqStatus").val() == "취소"){
+        msg = "취소 처리 하시겠습니까?";
+    }
+
+    if($("#reqStatus").val() == "반려"){
+        msg = "반려하시겠습니까?";
+    }
+
+    if(confirm(msg) == false){
+        return false;
+    }
+
+    $.ajax({
+        url: api+'/exchange/update?exchangeId='+exchangeId+'&status='+$("#reqStatus").val(),
+        type: 'post',
+        dataType: 'json',
+        success: function(response) {
+            if(response.success){
+                alert("처리되었습니다.");
+                location.reload();
+            }else{
+                alert(response.msg);
+            }
+        },error: function(xhr, ajaxOptions, thrownError) {
+            alert("등록중 오류가 발생했습니다.");
+        }
+    });
+
+
+}
+
 function getList() {
     var exchangeId = $("#exchangeId").val();
     var api = $("#apiAddress").val();
@@ -36,6 +76,15 @@ function getList() {
                     + '<td style="text-align: center">' + moment(exchangeInfo.createDatetime).format('YYYY-MM-DD') + '</td>'
                     + '<td style="text-align: center">' + endDay + '</td>'
                     + '<td style="text-align: center">' + exchangeInfo.status + '</td>'
+                    + '<td style="text-align: center">\
+                                    <select id="reqStatus" name="reqStatus" onchange="updateStatus('+exchangeInfo.exchangeId+')">\
+                                        <option>작업</option>\
+                                        <option value="0">신청서다운로드</option>\
+                                        <option value="완료">완료</option>\
+                                        <option value="승인">승인</option>\
+                                        <option value="반려">반려</option>\
+                                        <option value="취소">취소</option>\
+                                    </select></td>'
                     + '</tr>';
 
                 $("#changeReqDetail").empty();
@@ -93,4 +142,8 @@ function getList() {
     });
 
 
+}
+
+function goMain() {
+    document.location.href = "/change/changeReq";
 }

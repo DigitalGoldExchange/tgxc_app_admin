@@ -14,8 +14,8 @@
             <div class="fmain-paymentlist-row m-2 justify-content-between align-items-center">
                 <div class="main-text col-auto ">신청 상세 정보</div>
                 <div class="col-auto mb-2">
-                    <button type="button" class="btn-total-view" onClick=toPaymentList()><span>돌아가기</span></button>
-                    <button type="button" class="btn-total-view" onClick=toPaymentList()><span>상태변경</span></button>
+                    <button type="button" class="btn-total-view" onClick=goMain()><span>돌아가기</span></button>
+<#--                    <button type="button" class="btn-total-view" onClick=toPaymentList()><span>상태변경</span></button>-->
                 </div>
             </div>
             <div class="fmain-col-grid">
@@ -31,20 +31,17 @@
                             <th style="text-align: center">교환신청일</th>
                             <th style="text-align: center">교환종료일</th>
                             <th style="text-align: center">상태</th>
+                            <th style="text-align: center">상태변경</th>
                         </tr>
                         </thead>
                         <tbody id="changeReqDetail">
-                        <#--                                <tr>-->
-                        <#--                                    <td>2020/07/01 18:33</td>-->
-                        <#--                                    <td>MAC주소</td>-->
-                        <#--                                    <td>서울특별시 용산구 이태원 333-45번길</td>-->
-                        <#--                                    <td>현금</td>-->
-                        <#--                                    <td><span>15,000원</span></td>-->
-                        <#--                                </tr>-->
+
                         </tbody>
                     </table>
                 </div>
             </div>
+
+
 
             <div class="fmain-paymentlist-row m-2 justify-content-between align-items-center">
                 <div class="main-text col-auto ">거래이력</div>

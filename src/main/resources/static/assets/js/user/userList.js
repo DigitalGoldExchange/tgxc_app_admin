@@ -16,7 +16,6 @@ function goUserDetail(userId) {
 }
 
 function updateStatus(userId) {
-
     var api = $("#apiAddress").val();
 
     var msg = "";

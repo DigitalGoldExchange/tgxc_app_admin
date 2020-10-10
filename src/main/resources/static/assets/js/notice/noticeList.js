@@ -15,6 +15,10 @@ function goNoticeAdd() {
     document.location.href = '/notice/noticeAdd';
 }
 
+function goNoticeDetail(noticeId) {
+    document.location.href = '/notice/noticeDetail?noticeId='+noticeId;
+}
+
 function updateStatus(noticeId) {
 
     var api = $("#apiAddress").val();
@@ -77,10 +81,10 @@ function getList(callback) {
                         }
 
                         html += '<tr>'
-                            + '<td style="text-align: center">' + list[i].noticeId + '</td>'
-                            + '<td style="text-align: center">' + list[i].title + '</td>'
-                            + '<td style="text-align: center">' + moment(list[i].createDatetime).format('YYYY-MM-DD') + '</td>'
-                            + '<td style="text-align: center">' + dispYn + '</td>'
+                            + '<td style="text-align: center" onclick="goNoticeDetail('+list[i].noticeId+')">' + list[i].noticeId + '</td>'
+                            + '<td style="text-align: center" onclick="goNoticeDetail('+list[i].noticeId+')">' + list[i].title + '</td>'
+                            + '<td style="text-align: center" onclick="goNoticeDetail('+list[i].noticeId+')">' + moment(list[i].createDatetime).format('YYYY-MM-DD') + '</td>'
+                            + '<td style="text-align: center" onclick="goNoticeDetail('+list[i].noticeId+')">' + dispYn + '</td>'
                             + '<td style="text-align: center">\
                                     <select id="noticeStatus" name="noticeStatus" onchange="updateStatus('+list[i].noticeId+')">\
                                         <option>작업</option>\

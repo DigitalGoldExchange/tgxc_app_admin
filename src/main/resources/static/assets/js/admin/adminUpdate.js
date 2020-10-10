@@ -61,6 +61,39 @@ $(function () {
 
 });
 
+function updateStatus(userId) {
+    var api = $("#apiAddress").val();
+    var msg = "";
+    if($("#userStatus").val() == 1){
+        msg = "비밀번호를 변경하시겠습니까?";
+    }else if($("#userStatus").val() == 2){
+        msg = "관리자를 삭제하시겠습니까?";
+    }
+
+    if(confirm(msg) == false){
+        return false;
+    }
+
+    $.ajax({
+        url: api+'/user/delete?userId='+userId,
+        type: 'post',
+        dataType: 'json',
+        success: function(response) {
+            if(response.success){
+                alert("처리되었습니다.");
+                location.reload();
+            }else{
+                alert(response.msg);
+            }
+        },error: function(xhr, ajaxOptions, thrownError) {
+            alert("등록중 오류가 발생했습니다.");
+        }
+    });
+
+
+
+}
+
 
 function getList(callback) {
 
@@ -87,7 +120,12 @@ function getList(callback) {
                             + '<td style="text-align: center" class="td"><input class="menuLevel_'+i+'" type="checkbox" name="menuLevel" value="notice"';if(list[i].menuLevel.includes("notice")){html+='checked';}html+='></td>'
                             + '<td style="text-align: center" class="td"><input class="menuLevel_'+i+'" type="checkbox" name="menuLevel" value="store"';if(list[i].menuLevel.includes("store")){html+='checked';}html+='></td>'
                             + '<td style="text-align: center">' + moment(list[i].createDatetime).format('YYYY-MM-DD') + '</td>'
-                            + '<td style="text-align: center">-</td>'
+                            + '<td style="text-align: center">\
+                                     <select id="userStatus" name="userStatus" onchange="updateStatus('+list[i].userId+')">\
+                                        <option>작업</option>\
+                                        <option value="1">비밀번호변경</option>\
+                                        <option value="2">삭제</option>\
+                                    </select></td>'
                             + '</tr>';
 
                     }

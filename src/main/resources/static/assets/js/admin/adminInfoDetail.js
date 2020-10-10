@@ -1,4 +1,5 @@
 $(function () {
+    getList();
     var api = $("#apiAddress").val();
 
     $("#updateAdminInfo").click(function () {
@@ -57,6 +58,7 @@ $(function () {
 
 
     function updateAdmin() {
+
         var datas = $("#insertAdmin").serialize();
         var userId = getCookie('userId');
         $.ajax({
@@ -88,6 +90,30 @@ function goAdminManage() {
 
 function goMain() {
     document.location.href = "/change/changeReq";
+}
+
+function getList() {
+    var api = $("#apiAddress").val();
+    var userId = getCookie('userId');
+    console.log(api);
+    $.ajax({
+        url : api+"/user/getOne?userId="+userId,
+        type : 'GET',
+        dataType : 'JSON',
+        success:function(response){
+            console.log(response);
+            if(response.success) {
+                $("#name").val(response.data.user.name);
+                $("#emailId").val(response.data.user.emailId);
+
+
+            }
+
+
+        }
+    });
+
+
 }
 
 
