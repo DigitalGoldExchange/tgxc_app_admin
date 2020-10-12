@@ -61,16 +61,57 @@ $(function () {
 
 });
 
+function doResetPassword(userId) {
+    $('#myModal').modal('show');
+
+    $("#submit_btn").click(function () {
+
+        var password = $("#password").val();
+        if(password == '' ) {
+            alert("초기화할 비밀번호를 입력해주세요.");
+            return false;
+        }
+        if(confirm("비밀번호를 초기화 하시겠습니까?") === false){
+            location.reload();
+            return false;
+        }
+        var api = $("#apiAddress").val();
+
+        $.ajax({
+            url: api+'/user/resetPassword?userId='+userId+'&password='+password,
+            type: 'post',
+            dataType: 'json',
+            success: function(response) {
+                if(response.success){
+                    alert("비밀번호 초기화 처리되었습니다.");
+                    location.reload();
+                }else{
+                    alert(response.msg);
+                }
+            },error: function(xhr, ajaxOptions, thrownError) {
+                alert("등록중 오류가 발생했습니다.");
+            }
+        });
+
+    });
+}
+
 function updateStatus(userId) {
     var api = $("#apiAddress").val();
-    var msg = "";
+
+
+
     if($("#userStatus").val() == 1){
-        msg = "비밀번호를 변경하시겠습니까?";
-    }else if($("#userStatus").val() == 2){
+        doResetPassword(userId);
+        return false;
+    }
+    var msg = "";
+    if($("#userStatus").val() == 2){
         msg = "관리자를 삭제하시겠습니까?";
     }
 
     if(confirm(msg) == false){
+        location.reload();
         return false;
     }
 
@@ -123,7 +164,7 @@ function getList(callback) {
                             + '<td style="text-align: center">\
                                      <select id="userStatus" name="userStatus" onchange="updateStatus('+list[i].userId+')">\
                                         <option>작업</option>\
-                                        <option value="1">비밀번호변경</option>\
+                                        <option value="1">비밀번호초기화</option>\
                                         <option value="2">삭제</option>\
                                     </select></td>'
                             + '</tr>';

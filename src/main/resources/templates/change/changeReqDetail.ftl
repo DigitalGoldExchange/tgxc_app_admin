@@ -4,6 +4,32 @@
 <!-- ============================================================== -->
 <!-- Page Content -->
 <!-- ============================================================== -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <b id="modal-top-title">반려</b>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tbody>
+                    <th>반려 사유를 입력해주세요.</th>
+                    <tr>
+                        <td><input type="text" class="form-control" name="note" id="note" maxlength="25"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-primary" id="submit_btn">등록</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="page-wrapper">
     <input type="hidden" id="exchangeId" value="${exchangeId?string}">
     <div class="container-fluid col-md-9 col-lg-8 col-sm-12">

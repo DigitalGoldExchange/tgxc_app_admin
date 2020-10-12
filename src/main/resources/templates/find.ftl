@@ -50,13 +50,13 @@
                 <#--						<div class="row form-group text-right mb-5">-->
                 <#--							<div class="col-12 text-grey"><a href="/find_id" class="text-grey text-decoration-none">FIND ID</a> / <a href="/find_pw" class="text-grey text-decoration-none">PW</a></div>-->
                 <#--						</div>-->
-                <button type="button" class="btn btn-primary login-text btn-block mt-5" onclick="findPassWord();">비밀번호 찾기</button>
+                <button type="button" class="btn btn-primary login-text btn-block mt-5" id="findPassWord">비밀번호 찾기</button>
             </form>
         </div>
     </div>
 </div>
 <script src="/assets/js/jquery-3.4.1.min.js"></script>
 <script src="/assets/js/script.js"></script>
-<script src="/assets/js/main/login.js"></script>
+<script src="/assets/js/main/find.js"></script>
 </body>
 </html>
