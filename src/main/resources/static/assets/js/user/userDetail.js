@@ -2,6 +2,43 @@ $(function () {
     // 페이지 로딩
 
     getList();
+
+    var userId = $("#userId").val();
+    var api = $("#apiAddress").val();
+
+    $("#submit_btn").click(function () {
+
+        var title = $("#title").val();
+        var content = $("#content").val();
+
+        if(title == '' ){
+            alert("제목을 입력해주세요.");
+            return false;
+        }
+
+        if(content == '' ){
+            alert("내용을 입력해주세요.");
+            return false;
+        }
+
+
+        $.ajax({
+            url: api+'/push/sendPush?title='+title+"&content="+content+"&userId="+userId,
+            type: 'post',
+            dataType: 'json',
+            success: function(response) {
+                if(response.success){
+                    alert("발송되었습니다.");
+                    location.reload();
+                }else{
+                    alert(response.msg);
+                }
+            },error: function(xhr, ajaxOptions, thrownError) {
+                alert("등록중 오류가 발생했습니다.");
+            }
+        });
+
+    });
 });
 
 function goUserList() {

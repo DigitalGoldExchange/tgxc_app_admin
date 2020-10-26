@@ -4,6 +4,40 @@
 <!-- ============================================================== -->
 <!-- Page Content -->
 <!-- ============================================================== -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <b id="modal-top-title">알림 등록</b>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tbody>
+                    <th>보내실 알림을 입력해주세요.</th>
+                    <tr>
+                        <th>제목</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" name="title" id="title" maxlength="25"></td>
+                    </tr>
+                    <tr>
+                        <th>내용</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" name="content" id="content" maxlength="25"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-primary" id="submit_btn">등록</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="page-wrapper">
     <input type="hidden" id="userId" value="${userId?string}">
     <div class="container-fluid col-md-9 col-lg-8 col-sm-12">
@@ -15,7 +49,7 @@
                 <div class="main-text col-auto ">회원 상세 정보</div>
                 <div class="col-auto mb-2">
                     <button type="button" class="btn-total-view" onClick=goUserList()><span>돌아가기</span></button>
-                    <button type="button" class="btn-total-view" onClick=toPaymentList()><span>알림보내기</span></button>
+                    <button type="button" class="btn-total-view" data-toggle="modal" data-target="#myModal"><span>알림보내기</span></button>
                 </div>
             </div>
             <div class="fmain-col-grid">
