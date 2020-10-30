@@ -50,6 +50,7 @@
                 <div class="col-auto mb-2">
                     <button type="button" class="btn-total-view" onClick=goUserList()><span>돌아가기</span></button>
                     <button type="button" class="btn-total-view" data-toggle="modal" data-target="#myModal"><span>알림보내기</span></button>
+                    <button type="button" class="btn-total-view" onClick=goOtpInit()><span>OTP초기화</span></button>
                 </div>
             </div>
             <div class="fmain-col-grid">

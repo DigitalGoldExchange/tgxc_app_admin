@@ -45,6 +45,31 @@ function goUserList() {
     document.location.href = '/user/userList';
 }
 
+function goOtpInit() {
+    var userId = $("#userId").val();
+    var api = $("#apiAddress").val();
+
+    if(confirm("OTP초기화 하시겠습니까?") == false){
+        return false;
+    }
+
+    $.ajax({
+        url: api+'/user/userOtpInit?userId='+userId,
+        type: 'post',
+        dataType: 'json',
+        success: function(response) {
+            if(response.success){
+                alert("초기화되었습니다.");
+                location.reload();
+            }else{
+                alert(response.msg);
+            }
+        },error: function(xhr, ajaxOptions, thrownError) {
+            alert("등록중 오류가 발생했습니다.");
+        }
+    });
+}
+
 function getList() {
     var userId = $("#userId").val();
     var api = $("#apiAddress").val();

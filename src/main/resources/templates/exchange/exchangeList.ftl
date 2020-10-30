@@ -19,6 +19,14 @@
                     <tr>
                         <td><input type="text" class="form-control" name="name" id="name" maxlength="25"></td>
                     </tr>
+                    <th>추가하실 매장 주소를 입력해주세요.</th>
+                    <tr>
+                        <td><input type="text" class="form-control" name="address" id="address" maxlength="25"></td>
+                    </tr>
+                    <th>추가하실 매장 대표번호를 입력해주세요.</th>
+                    <tr>
+                        <td><input type="text" class="form-control" name="phoneNumber" id="phoneNumber" maxlength="25"></td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -48,22 +56,22 @@
             </div>
             <div class="update-info-text-underline"></div>
 
-            <div class="fmain-paymentlist-row m-2">
-                <div class="main-text col-auto ">교환 관리</div>
-            </div>
-            <div class="fmain-col-grid2">
-                <div class="form-check form-check-inline mr-3" style="margin-right: 100px">
-                    <input class="form-check-input receiveType" type="checkbox" name="receiveType" id="receiveType_visit" value="visit">
-                    <label class="form-check-label" for="receiveType_0">방문수령</label>
-                </div>
-                <div class="form-check form-check-inline mr-3" style="margin-right: 18px">
-                    <input class="form-check-input receiveType" type="checkbox" name="receiveType" id="receiveType_mail" value="mail">
-                    <label class="form-check-label" for="receiveType_1">우편수령</label>
-                </div>
-                <button type="button" class="btn-total-view" id="saveReceiveType"><span>저장</span></button>
+<#--            <div class="fmain-paymentlist-row m-2">-->
+<#--                <div class="main-text col-auto ">교환 관리</div>-->
+<#--            </div>-->
+<#--            <div class="fmain-col-grid2">-->
+<#--                <div class="form-check form-check-inline mr-3" style="margin-right: 100px">-->
+<#--                    <input class="form-check-input receiveType" type="checkbox" name="receiveType" id="receiveType_visit" value="visit">-->
+<#--                    <label class="form-check-label" for="receiveType_0">방문수령</label>-->
+<#--                </div>-->
+<#--                <div class="form-check form-check-inline mr-3" style="margin-right: 18px">-->
+<#--                    <input class="form-check-input receiveType" type="checkbox" name="receiveType" id="receiveType_mail" value="mail">-->
+<#--                    <label class="form-check-label" for="receiveType_1">우편수령</label>-->
+<#--                </div>-->
+<#--                <button type="button" class="btn-total-view" id="saveReceiveType"><span>저장</span></button>-->
 
-            </div>
-            <div class="update-info-text-underline"></div>
+<#--            </div>-->
+<#--            <div class="update-info-text-underline"></div>-->
 
             <div class="fmain-paymentlist-row m-2">
                 <div class="main-text col-auto ">교환 매장 관리</div>

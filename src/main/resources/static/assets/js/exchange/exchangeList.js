@@ -71,9 +71,19 @@ $(function () {
     $("#submit_btn").click(function () {
 
         var name = $("#name").val();
+        var address = $("#address").val();
+        var phoneNumber = $("#phoneNumber").val();
 
         if(name == '' ){
             alert("매장명을 입력해주세요.");
+            return false;
+        }
+        if(address == '' ){
+            alert("주소를 입력해주세요.");
+            return false;
+        }
+        if(phoneNumber == '' ){
+            alert("전화번호를 입력해주세요.");
             return false;
         }
 
@@ -82,7 +92,7 @@ $(function () {
         }
 
         $.ajax({
-            url: api+'/exchangeStore/insert?name='+name,
+            url: api+'/exchangeStore/insert?name='+name+'&address='+address+'&phoneNumber='+phoneNumber,
             type: 'post',
             dataType: 'json',
             success: function(response) {
