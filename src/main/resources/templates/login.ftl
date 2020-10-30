@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/login_bootstrap.css">
     <link rel="stylesheet" href="assets/css/login_style.css">
 
-    <title>DGEX</title>
+    <title>TGXC</title>
 
 </head>
 <body>
