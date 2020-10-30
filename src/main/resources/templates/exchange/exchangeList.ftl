@@ -38,6 +38,40 @@
     </div>
 </div>
 
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <b id="modal-top-title">매장 등록</b>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" name="storeId" id="storeId" value="">
+                <table class="table table-bordered">
+                    <tbody>
+                    <th>추가하실 매장명을 입력해주세요.</th>
+                    <tr>
+                        <td><input type="text" class="form-control" name="name1" id="name1" maxlength="25"></td>
+                    </tr>
+                    <th>추가하실 매장 주소를 입력해주세요.</th>
+                    <tr>
+                        <td><input type="text" class="form-control" name="address1" id="address1" maxlength="25"></td>
+                    </tr>
+                    <th>추가하실 매장 대표번호를 입력해주세요.</th>
+                    <tr>
+                        <td><input type="text" class="form-control" name="phoneNumber1" id="phoneNumber1" maxlength="25"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-primary" id="update_btn">수정</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="page-wrapper">
     <div class="container-fluid col-md-9 col-lg-8 col-sm-12">
         <!-- ============================================================== -->
@@ -85,6 +119,7 @@
                             <div class="col-auto mb-2">
                                 <button type="button" class="btn-total-view" id="updateActive"><span>활성화</span></button>
                                 <button type="button" class="btn-total-view" data-toggle="modal" data-target="#myModal"><span>추가</span></button>
+                                <button type="button" class="btn-total-view" id="updateStore"><span>수정</span></button>
                                 <button type="button" class="btn-total-view" id="deleteStore"><span>삭제</span></button>
                             </div>
                         </div>
