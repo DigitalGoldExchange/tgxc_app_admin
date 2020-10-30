@@ -55,21 +55,21 @@ function goChangeReqDetail(exchangeId) {
     document.location.href = '/change/changeReqDetail?exchangeId='+exchangeId;
 }
 
-function updateStatus(exchangeId) {
+function updateStatus(exchangeId, status) {
 
     var api = $("#apiAddress").val();
 
 
-    if($("#reqStatus").val() == "반려"){
+    if(status == "반려"){
         doReject(exchangeId);
         return false;
     }
     var msg = "";
-    if($("#reqStatus").val() == "완료"){
+    if(status == "완료"){
         msg = "완료 처리 하시겠습니까?";
-    }else if($("#reqStatus").val() == "승인"){
+    }else if(status == "승인"){
         msg = "승인하시겠습니까?";
-    }else if($("#reqStatus").val() == "취소"){
+    }else if(status == "취소"){
         msg = "취소 처리 하시겠습니까?";
     }
     if(confirm(msg) === false){
@@ -77,7 +77,7 @@ function updateStatus(exchangeId) {
     }
 
     $.ajax({
-        url: api+'/exchange/update?exchangeId='+exchangeId+'&status='+$("#reqStatus").val(),
+        url: api+'/exchange/update?exchangeId='+exchangeId+'&status='+status,
         type: 'post',
         dataType: 'json',
         success: function(response) {
@@ -100,12 +100,13 @@ function updateStatus(exchangeId) {
 
 
 function getList(callback) {
-
+    var level = getCookie('level');
+    console.log(level);
     var api = $("#apiAddress").val();
     var datas = $("#exchangeSearch").serialize();
     console.log(api);
     $.ajax({
-        url : api+"/exchange/getList",
+        url : api+"/exchange/getList?type=exchange",
         type : 'GET',
         data: datas,
         dataType : 'JSON',
@@ -129,20 +130,24 @@ function getList(callback) {
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + list[i].user.emailId + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + list[i].user.name + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + list[i].user.phoneNumber + '</td>'
-                            + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + list[i].reqAmount + '</td>'
+                            + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + list[i].amount + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + moment(list[i].createDatetime).format('YYYY-MM-DD') + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + endDay + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + list[i].status + '</td>'
-                            + '<td style="text-align: center">\
-                                    <select id="reqStatus" name="reqStatus" onchange="updateStatus('+list[i].exchangeId+')">\
-                                        <option>작업</option>\
-                                        <option value="0">신청서다운로드</option>\
-                                        <option value="완료">완료</option>\
-                                        <option value="승인">승인</option>\
-                                        <option value="반려">반려</option>\
-                                        <option value="취소">취소</option>\
-                                    </select></td>'
-                            + '</tr>';
+                            + '<td style="text-align: center">';
+                                if(list[i].status == '완료' && level != 'ADMIN'){
+                                    html += '-';
+                                }else{
+                                    html += '<select id="reqStatus" name="reqStatus" onchange="updateStatus('+list[i].exchangeId+',this.value)">\
+                                                <option>작업</option>\
+                                                <option value="0">신청서다운로드</option>\
+                                                <option value="완료">완료</option>\
+                                                <option value="승인">승인</option>\
+                                                <option value="반려">반려</option>\
+                                                <option value="취소">취소</option>\
+                                            </select></td>';
+                                }
+                                html += '</tr>';
                     }
                     $("#changeReqList").empty();
                     $("#changeReqList").append(html);

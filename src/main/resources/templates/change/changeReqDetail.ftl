@@ -30,6 +30,40 @@
     </div>
 </div>
 
+<div class="modal fade " id="identifyImage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content modal-content-none">
+            <div class="modal-header">
+                <b>신분증사진</b>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="identify_img" style="max-width:100%;">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="faceImage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content modal-content-none">
+            <div class="modal-header">
+                <b>얼굴사진</b>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="face_img" style="max-width:100%;">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="page-wrapper">
     <input type="hidden" id="exchangeId" value="${exchangeId?string}">
     <div class="container-fluid col-md-9 col-lg-8 col-sm-12">

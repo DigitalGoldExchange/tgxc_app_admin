@@ -46,6 +46,9 @@
                     </table>
                 </div>
             </div>
+            <div class="d-flex justify-content-center">
+                <div id="show-paginator" aria-label="Page navigation example"></div>
+            </div>
         </div>
     </div>
 </div>

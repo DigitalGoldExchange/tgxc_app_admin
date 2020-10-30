@@ -76,6 +76,8 @@ function getList() {
                     status = "활성화";
                 }else if(user.status == 3){
                     status = "탈퇴";
+                }else if(user.status == 4){
+                    status = "KYC확인";
                 }
 
 
@@ -86,7 +88,7 @@ function getList() {
                     + '<td style="text-align: center">' + (user.address!=null?user.address:'-') + '</td>'
                     + '<td style="text-align: center">' + user.totalTg + '</td>'
                     + '<td style="text-align: center">' + moment(user.createDatetime).format('YYYY-MM-DD') + '</td>'
-                    + '<td style="text-align: center">' + user.status + '</td>'
+                    + '<td style="text-align: center">' + status + '</td>'
                     + '</tr>';
 
                 $("#userDetail").empty();
