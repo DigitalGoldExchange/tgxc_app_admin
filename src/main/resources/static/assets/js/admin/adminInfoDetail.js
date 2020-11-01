@@ -32,6 +32,14 @@ $(function () {
             return false;
         }
 
+        var passRule = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+
+        if(!passRule.test(updatePassword)) {
+            alert("비밀번호는 영어+숫자+특수문자 조합으로 8~20자 형식이여야 합니다. ");
+            return false;
+        }
+
+
         if(updatePassword != confirmPassword){
             alert("변경할 비밀번호가 일치하지 않습니다.");
             return false;

@@ -14,6 +14,7 @@
                 <div class="main-text col-auto ">회원 정보 관리</div>
                 <div class="col-auto mb-2">
                     <form role="search" class="app-search" id="userSearch">
+                        <input type="hidden" id="page" name="page" value="1">
                         <div class="row d-flex justify-content-end">
                             <select class="form-searchType" id="searchKey" name="searchKey">
                                 <option value="0">전체</option>
