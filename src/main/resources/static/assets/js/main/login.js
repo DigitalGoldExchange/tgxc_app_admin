@@ -23,7 +23,7 @@ function login() {
     var datas = $("#loginForm").serialize();
     console.log(datas);
     $.ajax({
-        url: api+"/user/login",
+        url: api+"/user/login?role=admin",
         type: 'POST',
         data: datas,
         dataType: 'JSON',
@@ -35,6 +35,7 @@ function login() {
                 setCookie('name', response.data.user.name, 7);
                 setCookie('userId', response.data.user.userId, 7);
                 setCookie('level', response.data.user.level, 7);
+                setCookie('menuLevel', response.data.user.menuLevel, 7);
                 location.href='/change/changeReq';
                 // if(response.data.level==10){
                 //     location.href='/main/adminMain';
