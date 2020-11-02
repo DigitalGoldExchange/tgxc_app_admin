@@ -37,5 +37,6 @@ spring:
 api:
   url: http://localhost:8093
 
-
+upload:
+  url: http://localhost:8093
 
