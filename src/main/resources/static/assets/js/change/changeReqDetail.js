@@ -2,17 +2,18 @@ $(function () {
     // 페이지 로딩
 
     getList();
+    var api = $("#apiAddress").val();
 
     $("#identifyImage").on("show.bs.modal",function(event){
         var button = $(event.relatedTarget);
         var upload_file = button.data("originimg");
-        $("#identify_img").attr("src","/uploads/"+upload_file);
+        $("#identify_img").attr("src",api+"/uploads/"+upload_file);
     });
 
     $("#faceImage").on("show.bs.modal",function(event){
         var button = $(event.relatedTarget);
         var upload_file = button.data("originimg");
-        $("#face_img").attr("src","/uploads/"+upload_file);
+        $("#face_img").attr("src",api+"/uploads/"+upload_file);
     });
 });
 function doReject(exchangeId) {

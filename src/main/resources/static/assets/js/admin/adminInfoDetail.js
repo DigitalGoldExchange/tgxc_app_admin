@@ -39,6 +39,13 @@ $(function () {
             return false;
         }
 
+        var emailRule = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(!emailRule.test(emailId)) {
+            alert("잘못된 이메일 형식입니다.");
+            return false;
+        }
+
+
 
         if(updatePassword != confirmPassword){
             alert("변경할 비밀번호가 일치하지 않습니다.");

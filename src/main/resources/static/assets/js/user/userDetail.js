@@ -6,6 +6,13 @@ $(function () {
     var userId = $("#userId").val();
     var api = $("#apiAddress").val();
 
+
+    $("#identifyImage").on("show.bs.modal",function(event){
+        var button = $(event.relatedTarget);
+        var upload_file = button.data("originimg");
+        $("#identify_img").attr("src",api+"/uploads/"+upload_file);
+    });
+
     $("#submit_btn").click(function () {
 
         var title = $("#title").val();
@@ -73,15 +80,14 @@ function goOtpInit() {
 function getList() {
     var userId = $("#userId").val();
     var api = $("#apiAddress").val();
-    console.log(api);
     $.ajax({
         url : api+"/user/getOne?userId="+userId,
         type : 'GET',
         dataType : 'JSON',
         success:function(response){
-            console.log(response.data);
+            console.log(response.data.user.koreanYn);
             if(response.success) {
-
+                // console.log(response.data.userPassportImage.profileImagePath);
                 //신청상세정보
                 var html = "";
                 var endDay = "";
@@ -115,6 +121,11 @@ function getList() {
                     + '<td style="text-align: center">' + moment(user.createDatetime).format('YYYY-MM-DD') + '</td>'
                     + '<td style="text-align: center">' + status + '</td>'
                     + '</tr>';
+                if(user.koreanYn == "N"){
+                    html += '<tr><td colspan="9" align="right">\
+                                <button type="button" class="btn-total-view" data-toggle="modal" data-target="#identifyImage" data-originimg="'+response.data.userPassportImage.profileImagePath+'"><span>신분증사진</span></button>\
+                                </td></tr>';
+                }
 
                 $("#userDetail").empty();
                 $("#userDetail").append(html);
@@ -139,6 +150,7 @@ function getList() {
                             + '<td style="text-align: center">' + exchangeList[i].reqAmount + '</td>'
                             + '<td style="text-align: center">' + exchangeList[i].status + '</td>'
                             + '</tr>';
+
                     }
                     $("#userReqList").empty();
                     $("#userReqList").append(htmlList);
