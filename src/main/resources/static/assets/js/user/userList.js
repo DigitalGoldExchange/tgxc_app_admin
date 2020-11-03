@@ -22,6 +22,7 @@ function goUserDetail(userId) {
 
 function updateStatus(userId, userStatus) {
     var api = $("#apiAddress").val();
+    alert(userStatus);
     var msg = "";
     if(userStatus == 1){
         msg = "비활성화 하시겠습니까?";
@@ -107,7 +108,7 @@ function getList(callback) {
                                             <option value="1">비활성화</option>\
                                             <option value="2">활성화</option>\
                                             <option value="3">탈퇴</option>\
-                                            <option value="3">KYC확인</option>\
+                                            <option value="4">KYC확인</option>\
                                          </select>';
                             }
                             html += '</td>\
