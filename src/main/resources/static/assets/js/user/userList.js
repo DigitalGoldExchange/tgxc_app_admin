@@ -22,7 +22,6 @@ function goUserDetail(userId) {
 
 function updateStatus(userId, userStatus) {
     var api = $("#apiAddress").val();
-    alert(userStatus);
     var msg = "";
     if(userStatus == 1){
         msg = "비활성화 하시겠습니까?";
