@@ -90,6 +90,15 @@
             </div>
             <div class="update-info-text-underline"></div>
 
+            <div class="fmain-paymentlist-row m-2">
+                <div class="main-text col-auto ">지갑 주소</div>
+            </div>
+            <div class="fmain-col-grid2">
+                <input type="text" size="100" style="text-align: left;" maxlength="100" id="walletAddress" name="walletAddress" value="">
+                <button type="button" class="btn-total-view" id="insertAddress"><span>저장</span></button>
+            </div>
+            <div class="update-info-text-underline"></div>
+
 <#--            <div class="fmain-paymentlist-row m-2">-->
 <#--                <div class="main-text col-auto ">교환 관리</div>-->
 <#--            </div>-->

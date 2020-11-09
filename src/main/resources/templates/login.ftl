@@ -18,13 +18,13 @@
 
     <link rel="stylesheet" href="assets/css/login_bootstrap.css">
     <link rel="stylesheet" href="assets/css/login_style.css">
-
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/plugins/images/264.png">
     <title>TGXC</title>
 
 </head>
 <body>
 <input type="hidden" id="apiAddress" value="${apiAddress?string}">
-<button type="button" class="btn-total-view4" onClick=changeLanguage()><span>ENG</span></button>
+<#--<button type="button" class="btn-total-view4" onClick=changeLanguage()><span>ENG</span></button>-->
 <div class="login-wrap flex-column d-flex justify-content-center align-items-center">
     <div class="login-body">
         <div class="login-wrap-logo d-flex flex-column justify-content-center align-items-center">

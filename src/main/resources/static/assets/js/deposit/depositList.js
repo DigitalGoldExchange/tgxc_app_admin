@@ -70,11 +70,12 @@ function doReject(exchangeId, status) {
             type: 'post',
             dataType: 'json',
             success: function(response) {
-                if(response.success){
+                if(response.data.result){
                     alert("반려 처리되었습니다.");
                     location.reload();
                 }else{
-                    alert(response.msg);
+                    alert(response.data.msg);
+                    location.reload();
                 }
             },error: function(xhr, ajaxOptions, thrownError) {
                 alert("등록중 오류가 발생했습니다.");
@@ -117,11 +118,12 @@ function updateStatus(exchangeId, status) {
         type: 'post',
         dataType: 'json',
         success: function(response) {
-            if(response.success){
+            if(response.data.result){
                 alert("처리되었습니다.");
                 location.reload();
             }else{
-                alert(response.msg);
+                alert(response.data.msg);
+                location.reload();
             }
         },error: function(xhr, ajaxOptions, thrownError) {
             alert("등록중 오류가 발생했습니다.");

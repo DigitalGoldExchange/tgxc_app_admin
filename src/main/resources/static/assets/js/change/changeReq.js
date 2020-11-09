@@ -36,11 +36,12 @@ function doReject(exchangeId) {
             type: 'post',
             dataType: 'json',
             success: function(response) {
-                if(response.success){
+                if(response.data.result){
                     alert("반려 처리되었습니다.");
                     location.reload();
                 }else{
-                    alert(response.msg);
+                    alert(response.data.msg);
+                    location.reload();
                 }
             },error: function(xhr, ajaxOptions, thrownError) {
                 alert("등록중 오류가 발생했습니다.");
@@ -81,11 +82,13 @@ function updateStatus(exchangeId, status) {
         type: 'post',
         dataType: 'json',
         success: function(response) {
-            if(response.success){
+            console.log(response);
+            if(response.data.result){
                 alert("처리되었습니다.");
                 location.reload();
             }else{
-                alert(response.msg);
+                alert(response.data.msg);
+                location.reload();
             }
         },error: function(xhr, ajaxOptions, thrownError) {
             alert("등록중 오류가 발생했습니다.");
@@ -135,7 +138,7 @@ function getList(callback) {
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + endDay + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + list[i].status + '</td>'
                             + '<td style="text-align: center">';
-                                if(list[i].status == '완료' && level != 'ADMIN'){
+                                if( (list[i].status == '완료' || list[i].status == '반려' || list[i].status == '취소') && level != 'ADMIN'){
                                     html += '-';
                                 }else{
                                     html += '<select id="reqStatus" name="reqStatus" onchange="updateStatus('+list[i].exchangeId+',this.value)">\

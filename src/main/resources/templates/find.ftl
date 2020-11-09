@@ -12,13 +12,13 @@
     <meta property="og:image" content="/assets/images/42@2x.png"/>
     <#--    <meta property="og:url" content="http://117.52.98.55:8080"/>-->
     <meta property="og:url" content="http://117.52.98.39:8085"/>
-    <meta property="og:description" content="DGEX"/>
-    <meta property="og:title" content="DGEX"/>
+    <meta property="og:description" content="TGXC"/>
+    <meta property="og:title" content="TGXC"/>
 
     <link rel="stylesheet" href="assets/css/login_bootstrap.css">
     <link rel="stylesheet" href="assets/css/login_style.css">
 
-    <title>DGEX</title>
+    <title>TGXC</title>
 
 </head>
 <body>

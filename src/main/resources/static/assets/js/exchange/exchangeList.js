@@ -28,6 +28,37 @@ $(function () {
 
     });
 
+    $("#insertAddress").click(function () {
+
+        var walletAddress = $("#walletAddress").val();
+
+        if(walletAddress == '' ){
+            alert("지갑주소를 입력해주세요.");
+            return false;
+        }
+
+        if(confirm("지갑주소를 저장하시겠습니까?") == false){
+            return false;
+        }
+
+        $.ajax({
+            url: api+'/deposit/insert?walletAddress='+walletAddress,
+            type: 'post',
+            dataType: 'json',
+            success: function(response) {
+                if(response.success){
+                    alert("등록되었습니다.");
+                    location.reload();
+                }else{
+                    alert(response.msg);
+                }
+            },error: function(xhr, ajaxOptions, thrownError) {
+                alert("등록중 오류가 발생했습니다.");
+            }
+        });
+
+    });
+
     $("#saveReceiveType").click(function () {
 
         if($('input:checkbox[name=receiveType]:checked').length == 0){
@@ -314,6 +345,7 @@ function getList() {
         success:function(response){
             console.log(response.data);
             $("#tg").val(response.data.exchangeRate.exchangeRate);
+            $("#walletAddress").val(response.data.depositAccount.account);
             var method = response.data.exchangeMethod.split(",");
             for(var i =0; i < method.length;i++){
                 $("#receiveType_"+method[i]).prop("checked",true);
