@@ -66,7 +66,7 @@ function doReject(exchangeId, status) {
         var api = $("#apiAddress").val();
 
         $.ajax({
-            url: api+'/exchange/update?exchangeId='+exchangeId+'&status='+status+"&note="+note,
+            url: api+'/exchange/update?exchangeId='+exchangeId+'&status='+status+'&note='+note,
             type: 'post',
             dataType: 'json',
             success: function(response) {
@@ -172,7 +172,7 @@ function getList(callback) {
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+','+list[i].user.userId+')">' + endDay + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+','+list[i].user.userId+')">' + list[i].status + '</td>'
                             + '<td style="text-align: center">';
-                        if(list[i].status == '완료' && level != 'ADMIN'){
+                        if((list[i].status == '완료' || list[i].status == '반려' || list[i].status == '취소') && level != 'ADMIN'){
                             html += '-';
                         }else{
                             html += '<select id="reqStatus" name="reqStatus" onchange="updateStatus('+list[i].exchangeId+',this.value)">\

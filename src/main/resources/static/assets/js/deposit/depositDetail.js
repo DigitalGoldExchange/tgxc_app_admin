@@ -58,6 +58,7 @@ function doReject(exchangeId, status) {
     $("#submit_btn").click(function () {
 
         var note = $("#note").val();
+
         if(note == '' ) {
             alert("반려사유를 입력해주세요.");
             return false;
@@ -66,9 +67,9 @@ function doReject(exchangeId, status) {
             return false;
         }
         var api = $("#apiAddress").val();
-
+        alert(note);
         $.ajax({
-            url: api+'/exchange/update?exchangeId='+exchangeId+'&status='+status+"&note="+note,
+            url: api+'/exchange/update?exchangeId='+exchangeId+'&status='+status+'&note='+note,
             type: 'post',
             dataType: 'json',
             success: function(response) {
@@ -185,6 +186,7 @@ function getList() {
                 //신청상세정보
                 var html = "";
                 var endDay = "";
+                var txId = "";
                 var exchangeInfo = response.data.exchangeInfo;
 
                 if(exchangeInfo.updateDatetime == null){
@@ -193,8 +195,15 @@ function getList() {
                     endDay = moment(exchangeInfo.updateDatetime).format('YYYY-MM-DD');
                 }
 
+                if(exchangeInfo.txId == null){
+                    txId = "-";
+                }else{
+                    txId = exchangeInfo.txId;
+                }
+
                 html += '<tr>'
                     + '<td style="text-align: center">' + exchangeInfo.reqNumber + '</td>'
+                    + '<td style="text-align: center">' + txId + '</td>'
                     + '<td style="text-align: center">' + exchangeInfo.user.emailId + '</td>'
                     + '<td style="text-align: center">' + exchangeInfo.walletAddr + '</td>'
                     + '<td style="text-align: center">' + exchangeInfo.user.name + '</td>'
@@ -202,7 +211,7 @@ function getList() {
                     + '<td style="text-align: center">' + exchangeInfo.amount + '</td>'
                     + '<td style="text-align: center">' + exchangeInfo.status + '</td>'
                     + '<td style="text-align: center">';
-                if(exchangeInfo.status =='완료' && level != 'ADMIN'){
+                if( (exchangeInfo.status =='완료' || exchangeInfo.status == '반려' || exchangeInfo.status == '취소')  && level != 'ADMIN'){
                     html += '-';
                 }else{
                     html += '<select id="reqStatus" name="reqStatus" onchange="updateStatus('+exchangeInfo.exchangeId+', this.value)">\

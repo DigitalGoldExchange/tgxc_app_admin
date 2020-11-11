@@ -16,7 +16,7 @@ $(function () {
 
 });
 
-function doReject(exchangeId) {
+function doReject(exchangeId, status) {
     $('#myModal').modal('show');
 
     $("#submit_btn").click(function () {
@@ -32,7 +32,7 @@ function doReject(exchangeId) {
         var api = $("#apiAddress").val();
 
         $.ajax({
-            url: api+'/exchange/update?exchangeId='+exchangeId+'&status='+$("#reqStatus").val()+"&note="+note,
+            url: api+'/exchange/update?exchangeId='+exchangeId+'&status='+status+'&note='+note,
             type: 'post',
             dataType: 'json',
             success: function(response) {
@@ -62,7 +62,7 @@ function updateStatus(exchangeId, status) {
 
 
     if(status == "반려"){
-        doReject(exchangeId);
+        doReject(exchangeId, status);
         return false;
     }
     var msg = "";

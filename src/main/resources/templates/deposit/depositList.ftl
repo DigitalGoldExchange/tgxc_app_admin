@@ -18,7 +18,7 @@
                     <tbody>
                     <th>반려 사유를 입력해주세요.</th>
                     <tr>
-                        <td><input type="text" class="form-control" name="name" id="name" maxlength="25"></td>
+                        <td><input type="text" class="form-control" name="note" id="note" maxlength="25"></td>
                     </tr>
                     </tbody>
                 </table>
