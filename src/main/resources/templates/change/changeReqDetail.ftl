@@ -66,7 +66,8 @@
 
 <div id="page-wrapper">
     <input type="hidden" id="exchangeId" value="${exchangeId?string}">
-    <div class="container-fluid col-md-9 col-lg-8 col-sm-12">
+    <div class="container-fluid">
+<#--        <div class="container-fluid col-md-9 col-lg-8 col-sm-12">    -->
         <!-- ============================================================== -->
         <!-- Different data widgets -->
         <!-- ============================================================== -->

@@ -5,7 +5,8 @@
 <!-- Page Content -->
 <!-- ============================================================== -->
 <div id="page-wrapper">
-    <div class="container-fluid col-md-9 col-lg-8 col-sm-12">
+    <div class="container-fluid">
+<#--        <div class="container-fluid col-md-9 col-lg-8 col-sm-12">-->
         <input type="hidden" id="noticeId" value="${noticeId?string}">
         <!-- ============================================================== -->
         <!-- Different data widgets -->

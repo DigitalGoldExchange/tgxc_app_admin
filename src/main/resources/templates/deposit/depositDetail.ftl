@@ -93,7 +93,8 @@
 <div id="page-wrapper">
     <input type="hidden" id="exchangeId" value="${exchangeId?string}">
     <input type="hidden" id="userId" value="${userId?string}">
-    <div class="container-fluid col-md-9 col-lg-8 col-sm-12">
+    <div class="container-fluid">
+<#--        <div class="container-fluid col-md-9 col-lg-8 col-sm-12">    -->
         <!-- ============================================================== -->
         <!-- Different data widgets -->
         <!-- ============================================================== -->
@@ -112,7 +113,6 @@
                         <thead>
                         <tr>
                             <th style="text-align: center">신청번호</th>
-                            <th style="text-align: center">TXID</th>
                             <th style="text-align: center">이메일</th>
                             <th style="text-align: center">출금주소</th>
                             <th style="text-align: center">이름</th>

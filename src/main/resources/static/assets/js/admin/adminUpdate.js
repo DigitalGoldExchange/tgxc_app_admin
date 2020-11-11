@@ -157,6 +157,7 @@ function getList(callback) {
                             + '<td style="text-align: center">' + list[i].name + '</td>'
                             + '<td style="text-align: center">' + list[i].emailId + '</td>'
                             + '<td style="text-align: center" class="td"><input class="menuLevel_'+i+'" type="checkbox" name="menuLevel" value="exchange"';if(list[i].menuLevel.includes("exchange")){html+='checked';}html+='></td>'
+                            + '<td style="text-align: center" class="td"><input class="menuLevel_'+i+'" type="checkbox" name="menuLevel" value="deposit"';if(list[i].menuLevel.includes("deposit")){html+='checked';}html+='></td>'
                             + '<td style="text-align: center" class="td"><input class="menuLevel_'+i+'" type="checkbox" name="menuLevel" value="user"';if(list[i].menuLevel.includes("user")){html+='checked';}html+='></td>'
                             + '<td style="text-align: center" class="td"><input class="menuLevel_'+i+'" type="checkbox" name="menuLevel" value="notice"';if(list[i].menuLevel.includes("notice")){html+='checked';}html+='></td>'
                             + '<td style="text-align: center" class="td"><input class="menuLevel_'+i+'" type="checkbox" name="menuLevel" value="store"';if(list[i].menuLevel.includes("store")){html+='checked';}html+='></td>'

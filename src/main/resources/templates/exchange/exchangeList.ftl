@@ -73,7 +73,8 @@
 </div>
 
 <div id="page-wrapper">
-    <div class="container-fluid col-md-9 col-lg-8 col-sm-12">
+    <div class="container-fluid">
+<#--        <div class="container-fluid col-md-9 col-lg-8 col-sm-12">-->
         <!-- ============================================================== -->
         <!-- Different data widgets -->
         <!-- ============================================================== -->

@@ -30,11 +30,13 @@
 </div>
 
 <div id="page-wrapper">
-    <div class="container-fluid col-md-9 col-lg-8 col-sm-12">
+    <div class="container-fluid">
+<#--        <div class="container-fluid col-md-9 col-lg-8 col-sm-12">-->
         <!-- ============================================================== -->
         <!-- Different data widgets -->
         <!-- ============================================================== -->
         <div class="main-content">
+            <input type="hidden" id="page" name="page" value="1">
             <div class="fmain-paymentlist-row m-2 justify-content-between align-items-center">
                 <div class="main-text col-auto ">관리자 관리</div>
                 <div class="col-auto mb-2">
@@ -48,12 +50,13 @@
                         <tr>
                             <th rowspan="2" style="text-align: center; vertical-align: middle;">이름</th>
                             <th rowspan="2" style="text-align: center; vertical-align: middle;">아이디</th>
-                            <th colspan="4" style="text-align: center; vertical-align: middle;">권한</th>
+                            <th colspan="5" style="text-align: center; vertical-align: middle;">권한</th>
                             <th rowspan="2" style="text-align: center; vertical-align: middle;">최근접속</th>
                             <th rowspan="2" style="text-align: center; vertical-align: middle;">작업</th>
                         </tr>
                         <tr>
-                            <th style="text-align: center">교환관리</th>
+                            <th style="text-align: center">교환신청관리</th>
+                            <th style="text-align: center">출금신청관리</th>
                             <th style="text-align: center">회원정보관리</th>
                             <th style="text-align: center">공지관리</th>
                             <th style="text-align: center">교환관리</th>
@@ -73,6 +76,9 @@
                 </div>
             </div>
 
+            <div class="d-flex justify-content-center">
+                <div id="show-paginator" aria-label="Page navigation example"></div>
+            </div>
 
 
         </div>

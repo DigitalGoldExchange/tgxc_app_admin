@@ -195,7 +195,6 @@ function getList() {
 
                 html += '<tr>'
                     + '<td style="text-align: center">' + exchangeInfo.reqNumber + '</td>'
-                    + '<td style="text-align: center">' + exchangeInfo.txid + '</td>'
                     + '<td style="text-align: center">' + exchangeInfo.user.emailId + '</td>'
                     + '<td style="text-align: center">' + exchangeInfo.walletAddr + '</td>'
                     + '<td style="text-align: center">' + exchangeInfo.user.name + '</td>'

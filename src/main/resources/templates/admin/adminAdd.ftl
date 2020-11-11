@@ -34,7 +34,11 @@
                     <div class="mb-2">권한설정</div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input menuLevel" type="checkbox" id="level_exchange" name="menuLevel" value="exchange">
-                        <label class="form-check-label" for="menuLevel">TG 교환 관리</label>
+                        <label class="form-check-label" for="menuLevel">교환 신청 관리</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input menuLevel" type="checkbox" id="level_exchange" name="menuLevel" value="deposit">
+                        <label class="form-check-label" for="menuLevel">출금 신청 관리</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input menuLevel" type="checkbox" id="level_user" name="menuLevel" value="user">
