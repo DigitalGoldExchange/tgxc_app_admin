@@ -36,6 +36,7 @@
                             <th style="text-align: center">아이디</th>
                             <th style="text-align: center">이름</th>
                             <th style="text-align: center">연락처</th>
+                            <th style="text-align: center">입금번호</th>
                             <th style="text-align: center">보유TG</th>
                             <th style="text-align: center">가입일</th>
                             <th style="text-align: center">상태</th>

@@ -113,6 +113,7 @@ function getList() {
                 //신청상세정보
                 var html = "";
                 var endDay = "";
+                var phoneNumber = "";
                 var exchangeInfo = response.data.exchangeInfo;
                 var exchangeImage = response.data.userExchangeImages;
 
@@ -122,11 +123,17 @@ function getList() {
                     endDay = moment(exchangeInfo.updateDatetime).format('YYYY-MM-DD');
                 }
 
+                if(exchangeInfo.user.phoneNumber == null || exchangeInfo.user.phoneNumber == 'undefined'){
+                    phoneNumber = "-";
+                }else{
+                    phoneNumber = exchangeInfo.user.phoneNumber;
+                }
+
                 html += '<tr>'
                     + '<td style="text-align: center">' + exchangeInfo.reqNumber + '</td>'
                     + '<td style="text-align: center">' + exchangeInfo.user.emailId + '</td>'
                     + '<td style="text-align: center">' + exchangeInfo.user.name + '</td>'
-                    + '<td style="text-align: center">' + exchangeInfo.user.phoneNumber + '</td>'
+                    + '<td style="text-align: center">' + phoneNumber + '</td>'
                     + '<td style="text-align: center">' + exchangeInfo.amount + '</td>'
                     + '<td style="text-align: center">' + moment(exchangeInfo.createDatetime).format('YYYY-MM-DD') + '</td>'
                     + '<td style="text-align: center">' + endDay + '</td>'
@@ -159,7 +166,8 @@ function getList() {
                 //거래이력
                 var exchangeList = response.data.exchangeList;
                 var htmlList = "";
-
+                var reqNumber = "";
+                var userStatus = "";
                 if (exchangeList.length > 0) {
                     for (var i = 0; i < exchangeList.length; i++) {
 
@@ -169,12 +177,24 @@ function getList() {
                             endDay = moment(exchangeList[i].updateDatetime).format('YYYY-MM-DD');
                         }
 
+                        if(exchangeList[i].reqNumber == null || exchangeList[i].reqNumber == 'undefined'){
+                            reqNumber = "-";
+                        }else{
+                            reqNumber = exchangeList[i].reqNumber;
+                        }
+
+                        if(exchangeList[i].status == null || exchangeList[i].status == 'undefined'){
+                            userStatus = "-";
+                        }else{
+                            userStatus = exchangeList[i].status;
+                        }
+
                         htmlList += '<tr>'
-                            + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + exchangeList[i].reqNumber + '</td>'
+                            + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + reqNumber + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + moment(exchangeList[i].createDatetime).format('YYYY-MM-DD') + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + endDay + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + exchangeList[i].amount + '</td>'
-                            + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + exchangeList[i].status + '</td>'
+                            + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + userStatus + '</td>'
                             + '</tr>';
                     }
                     $("#changeReqList").empty();

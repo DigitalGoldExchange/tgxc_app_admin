@@ -118,6 +118,7 @@ function getList(callback) {
             if(response.success) {
                 var html = "";
                 var endDay = "";
+                var phoneNumber = "";
                 var list = response.data.list;
                 if (list.length > 0) {
                     for (var i = 0; i < list.length; i++) {
@@ -128,11 +129,17 @@ function getList(callback) {
                             endDay = moment(list[i].updateDatetime).format('YYYY-MM-DD');
                         }
 
+                        if(list[i].user.phoneNumber == null || list[i].user.phoneNumber == 'undefined'){
+                            phoneNumber = "-";
+                        }else{
+                            phoneNumber = list[i].user.phoneNumber;
+                        }
+
                         html += '<tr>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + list[i].reqNumber + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + list[i].user.emailId + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + list[i].user.name + '</td>'
-                            + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + list[i].user.phoneNumber + '</td>'
+                            + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + phoneNumber + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + list[i].amount + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + moment(list[i].createDatetime).format('YYYY-MM-DD') + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+list[i].exchangeId+')">' + endDay + '</td>'

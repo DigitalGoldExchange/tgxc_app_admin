@@ -74,6 +74,9 @@ function getList(callback) {
             if(response.success) {
                 var html = "";
                 var status = "";
+                var phoneNumber = "";
+                var userName = "";
+                var identifyNumber = "";
                 var list = response.data.list;
                 if (list.length > 0) {
                     for (var i = 0; i < list.length; i++) {
@@ -90,11 +93,31 @@ function getList(callback) {
                             status = "KYC확인";
                         }
 
+                        if(list[i].phoneNumber == null || list[i].phoneNumber == 'undefined'){
+                            phoneNumber = "-";
+                        }else{
+                            phoneNumber = list[i].phoneNumber;
+                        }
+
+                        if(list[i].name == null || list[i].name == 'undefined'){
+                            userName = "-";
+                        }else{
+                            userName = list[i].name;
+                        }
+
+                        if(list[i].identifyNumber == null || list[i].identifyNumber == 'undefined'){
+                            identifyNumber = "-";
+                        }else{
+                            identifyNumber = list[i].identifyNumber;
+                        }
+
+
 
                         html += '<tr>'
                             + '<td style="text-align: center" onclick="goUserDetail('+list[i].userId+')">' + list[i].emailId + '</td>'
-                            + '<td style="text-align: center" onclick="goUserDetail('+list[i].userId+')">' + list[i].name + '</td>'
-                            + '<td style="text-align: center" onclick="goUserDetail('+list[i].userId+')">' + list[i].phoneNumber + '</td>'
+                            + '<td style="text-align: center" onclick="goUserDetail('+list[i].userId+')">' + userName + '</td>'
+                            + '<td style="text-align: center" onclick="goUserDetail('+list[i].userId+')">' + phoneNumber + '</td>'
+                            + '<td style="text-align: center" onclick="goUserDetail('+list[i].userId+')">' + identifyNumber + '</td>'
                             + '<td style="text-align: center" onclick="goUserDetail('+list[i].userId+')">' + list[i].totalTg + '</td>'
                             + '<td style="text-align: center" onclick="goUserDetail('+list[i].userId+')">' + moment(list[i].createDatetime).format('YYYY-MM-DD') + '</td>'
                             + '<td style="text-align: center" onclick="goUserDetail('+list[i].userId+')">' + status + '</td>'
