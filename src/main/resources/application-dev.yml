@@ -16,8 +16,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 465
-    username: alex@laidback.co.kr
-    password: '12341234'
+    username: support@tgxc.net
+    password: 'asdfqwer1234!@'
     protocol: smtp
     properties:
       mail:

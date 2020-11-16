@@ -16,8 +16,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 465
-    username: alex@laidback.co.kr
-    password: '12341234'
+    username: support@tgxc.net
+    password: 'asdfqwer1234!@'
     protocol: smtp
     properties:
       mail:
@@ -35,8 +35,8 @@ spring:
   freemarker:
     cache: false
 api:
-  url: http://117.52.98.39:8093
+  url: https://service.tgxc.net
 
 upload:
-  url: http://117.52.98.39:8093
+  url: https://service.tgxc.net
 
