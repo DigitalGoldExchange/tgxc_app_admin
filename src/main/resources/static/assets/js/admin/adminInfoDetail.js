@@ -107,6 +107,10 @@ function goMain() {
     document.location.href = "/change/changeReq";
 }
 
+function goStoreManage() {
+    document.location.href = "/admin/memberAdd";
+}
+
 function getList() {
     var api = $("#apiAddress").val();
     var userId = getCookie('userId');

@@ -9,7 +9,7 @@ $(function () {
 
      var menuLevel = getCookie('menuLevel');
      var level = getCookie('level');
-     console.log(menuLevel);
+     console.log(level);
      if(level == 'ADMIN'){
          var html =
              '<li style="padding: 70px 0 0;">\
@@ -20,6 +20,14 @@ $(function () {
                  <li><a href="/notice/noticeList" class="waves-effect">공지관리</a></li>\
                  <li><a href="/exchange/exchangeList" class="waves-effect">교환 관리</a></li>\
                  <li><a href="/admin/adminInfo" class="waves-effect">관리자정보</a></li>\
+                 <li style="padding: 20px 0 0;"><a class="waves-effect logout-font" id="logout">로그아웃</a></li>';
+         $("#side-menu").empty();
+         $("#side-menu").append(html);
+     }else if(level == 'MEMBER'){
+         var html =
+             '<li style="padding: 70px 0 0;">\
+                 </li>\
+                 <li><a href="/admin/memberExchange" class="waves-effect">교환 신청 확인</a></li>\
                  <li style="padding: 20px 0 0;"><a class="waves-effect logout-font" id="logout">로그아웃</a></li>';
          $("#side-menu").empty();
          $("#side-menu").append(html);
@@ -52,13 +60,13 @@ $(function () {
 
 
 });
-
-function goMain() {
-    if(getCookie('level')==10){
-        location.href='/change/changeReq';
-    }else{
-        location.href='/change/changeReq';
-    }
-}
+//
+// function goMain() {
+//     if(getCookie('level')==10){
+//         location.href='/change/changeReq';
+//     }else{
+//         location.href='/change/changeReq';
+//     }
+// }
 
 

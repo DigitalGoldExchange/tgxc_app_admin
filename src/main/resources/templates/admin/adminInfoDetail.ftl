@@ -41,6 +41,7 @@
                     <button type="button" class="btn-total-view" onClick=goMain()><span>취소</span></button>
                     <#if 'ADMIN' = '${level}'>
                         <button type="button" class="btn-total-view" onClick=goAdminManage()><span>관리자 관리</span></button>
+                        <button type="button" class="btn-total-view" onClick=goStoreManage()><span>매장관리자</span></button>
                     </#if>
 
                 </div>
