@@ -4,6 +4,35 @@
 <!-- ============================================================== -->
 <!-- Page Content -->
 <!-- ============================================================== -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <b id="modal-top-title">서버 관리</b>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group form-group-in m-0">
+                    <div class="form-check form-check-inline mr-3">
+                        <input class="form-check-input" type="radio" name="check_info"  value="Y" >
+                        <label class="form-check-label">ON</label>
+                    </div>
+                    <div class="form-check form-check-inline mr-3">
+                        <input class="form-check-input" type="radio" name="check_info" value="N" >
+                        <label class="form-check-label">OFF</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-primary" id="submit_btn">등록</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div id="page-wrapper">
     <div class="container-fluid col-md-9 col-lg-8 col-sm-12">
         <input type="hidden" id="userId" value="${userId?string}">
@@ -42,6 +71,7 @@
                     <#if 'ADMIN' = '${level}'>
                         <button type="button" class="btn-total-view" onClick=goAdminManage()><span>관리자 관리</span></button>
                         <button type="button" class="btn-total-view" onClick=goStoreManage()><span>매장관리자</span></button>
+                        <button type="button" class="btn-total-view" data-toggle="modal" data-target="#myModal"><span>서버관리</span></button>
                     </#if>
 
                 </div>

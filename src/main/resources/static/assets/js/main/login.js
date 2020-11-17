@@ -36,7 +36,8 @@ function login() {
                 setCookie('userId', response.data.user.userId, 7);
                 setCookie('level', response.data.user.level, 7);
                 setCookie('menuLevel', response.data.user.menuLevel, 7);
-                location.href='/change/changeReq';
+                // location.href='/change/changeReq';
+                location.href='/admin/home';
                 // if(response.data.level==10){
                 //     location.href='/main/adminMain';
                 // }else{

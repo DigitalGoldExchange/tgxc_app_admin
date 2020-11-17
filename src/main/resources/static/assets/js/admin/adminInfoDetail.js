@@ -1,5 +1,6 @@
 $(function () {
     getList();
+    getServerManage();
     var api = $("#apiAddress").val();
 
     $("#updateAdminInfo").click(function () {
@@ -71,6 +72,29 @@ $(function () {
 
     });
 
+    $("#submit_btn").click(function () {
+
+        var radioVal = $('input[name="check_info"]:checked').val();
+        var userId = getCookie('userId');
+
+
+        $.ajax({
+            url: api+'/serverManage/update?userId='+userId+"&status="+radioVal,
+            type: 'post',
+            success: function(response) {
+                console.log(response);
+                alert("변경되었습니다.");
+                location.reload();
+            },error: function(xhr, ajaxOptions, thrownError) {
+                alert("오류가 발생했습니다.");
+            }
+        });
+
+
+    });
+
+
+
 
     function updateAdmin() {
 
@@ -125,6 +149,28 @@ function getList() {
                 $("#name").val(response.data.user.name);
                 $("#emailId").val(response.data.user.emailId);
 
+
+            }
+
+
+        }
+    });
+
+
+}
+
+function getServerManage() {
+    var api = $("#apiAddress").val();
+    $.ajax({
+        url : api+"/serverManage/getOne",
+        type : 'GET',
+        dataType : 'JSON',
+        success:function(response){
+            console.log(response);
+            if(response.success) {
+                // $("#name").val(response.data.user.name);
+                // $("#emailId").val(response.data.user.emailId);
+                $('input[name="check_info"]').val([response.data.status]);
 
             }
 

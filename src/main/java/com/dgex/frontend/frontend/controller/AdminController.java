@@ -55,4 +55,11 @@ public class AdminController {
         mav.setViewName("/admin/memberExchange");
         return mav;
     }
+
+    @RequestMapping(value = "/admin/home", method = RequestMethod.GET)
+    public ModelAndView home(ModelAndView mav) {
+        mav.addObject("apiAddress",apiAddress);
+        mav.setViewName("/admin/home");
+        return mav;
+    }
 }

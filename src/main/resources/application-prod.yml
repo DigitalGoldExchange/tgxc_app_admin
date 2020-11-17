@@ -35,8 +35,8 @@ spring:
   freemarker:
     cache: false
 api:
-  url: http://api.tgxc.net
+  url: https://api.tgxc.net
 
 upload:
-  url: http://api.tgxc.net
+  url: https://api.tgxc.net
 

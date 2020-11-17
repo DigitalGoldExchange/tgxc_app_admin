@@ -14,6 +14,7 @@ $(function () {
          var html =
              '<li style="padding: 70px 0 0;">\
                  </li>\
+                 <li><a href="/admin/home" class="waves-effect">홈</a></li>\
                  <li><a href="/change/changeReq" class="waves-effect">교환 신청 관리</a></li>\
                  <li><a href="/deposit/depositList" class="waves-effect">출금 신청 관리</a></li>\
                  <li><a href="/user/userList" class="waves-effect">회원정보관리</a></li>\
@@ -27,6 +28,7 @@ $(function () {
          var html =
              '<li style="padding: 70px 0 0;">\
                  </li>\
+                 <li><a href="/admin/home" class="waves-effect">홈</a></li>\
                  <li><a href="/admin/memberExchange" class="waves-effect">교환 신청 확인</a></li>\
                  <li style="padding: 20px 0 0;"><a class="waves-effect logout-font" id="logout">로그아웃</a></li>';
          $("#side-menu").empty();
@@ -34,7 +36,8 @@ $(function () {
      }else{
          var html =
              '<li style="padding: 70px 0 0;">\
-                 </li>';
+                 </li>\
+                 <li><a href="/admin/home" class="waves-effect">홈</a></li>';
                  if(menuLevel.includes('change')){
                     html += '<li><a href="/change/changeReq" class="waves-effect">교환 신청 관리</a></li>';
                  }
