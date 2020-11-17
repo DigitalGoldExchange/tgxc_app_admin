@@ -7,7 +7,7 @@ logging:
 
 spring:
   profiles:
-    active: local
+    active: prod
   banner:
     location: banner.txt
   mvc:
