@@ -63,7 +63,12 @@
             TGXC implements security measures to prevent unauthorized modification and disclosure of user information. Security measures include PCI scanning, SSL technology, restrictions on accessing internal information and physical access to files. As 100% security cannot be ensured on internet-based information transfer and electronic storage of information, Users must take precaution to protect their personal information. User must contact TGXC immediately if leakage of personal information such as account and password is suspected.
             <br><br>
             TGXC respects the freedom and rights of Users who trust the service provided by TGXC. If you have any questions, comments, or need to request information protection, refer to Frequently Asked Questions section on TGXC site or contact customer support.
-
+            <br><br>
+            Name : 이동기<br>
+            PhoneNumber : 02-533-4559<br>
+            Team : 기술팀<br>
+            Email : dklee7206@gmail.com<br>
+            Tech : 이사<br>
 
 
         </div>
