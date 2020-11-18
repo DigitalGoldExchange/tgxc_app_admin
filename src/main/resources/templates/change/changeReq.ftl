@@ -89,14 +89,14 @@
 <!-- End Page Content -->
 <!-- ============================================================== -->
 
-<table id="exchangeListByExeclTable" style="display:none;">
-    <thead>
-    <tr>
-        <th colspan="8" style="text-align: center">TGXC 금 교환 신청서</th>
-    </tr>
-    </thead>
-    <tbody id="exchangeListByExeclBody"></tbody>
-</table>
+<#--<table id="exchangeListByExeclTable" style="display:none;">-->
+<#--    <thead>-->
+<#--    <tr>-->
+<#--        <th colspan="8" style="text-align: center">TGXC 금 교환 신청서</th>-->
+<#--    </tr>-->
+<#--    </thead>-->
+<#--    <tbody id="exchangeListByExeclBody"></tbody>-->
+<#--</table>-->
 
 </div>
 <!-- ============================================================== -->

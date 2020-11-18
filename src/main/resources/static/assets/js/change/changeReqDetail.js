@@ -6,23 +6,15 @@ $(function () {
 
     $("#identifyImage").on("show.bs.modal",function(event){
         var button = $(event.relatedTarget);
-        var file = api+"/uploads/"+button.data("originimg");
-        console.log(file);
-        var key  = '123456789abcdefg';
-        var upload_file = CryptoJS.AES.decrypt(file, key,{
-            mode: CryptoJS.mode.ECB,
-            padding:CryptoJS.pad.Pkcs5
-        });
-
-        // var upload_file = button.data("originimg");
-        $("#identify_img").attr("src",upload_file);
+        var upload_file = button.data("originimg");
+        $("#identify_img").attr("src",api+"/uploads/"+upload_file);
     });
 
     $("#faceImage").on("show.bs.modal",function(event){
         var button = $(event.relatedTarget);
         var upload_file = button.data("originimg");
-        var file = api+"/uploads/"+button.data("originimg");
-        console.log(file);
+        // var file = api+"/uploads/"+button.data("originimg");
+        // console.log(file);
         $("#face_img").attr("src",api+"/uploads/"+upload_file);
     });
 });
