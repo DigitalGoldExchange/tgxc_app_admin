@@ -88,7 +88,9 @@
                             <th style="text-align: center">이메일</th>
                             <th style="text-align: center">이름</th>
                             <th style="text-align: center">연락처</th>
-                            <th style="text-align: center">신청TG량</th>
+                            <th style="text-align: center">신청상풍</th>
+                            <th style="text-align: center">신청수량</th>
+                            <th style="text-align: center">신청TG</th>
                             <th style="text-align: center">교환신청일</th>
                             <th style="text-align: center">교환종료일</th>
                             <th style="text-align: center">상태</th>
@@ -115,7 +117,9 @@
                             <th style="text-align: center">신청번호</th>
                             <th style="text-align: center">교환신청일</th>
                             <th style="text-align: center">교환종료일</th>
-                            <th style="text-align: center">신청TG량</th>
+                            <th style="text-align: center">신청상풍</th>
+                            <th style="text-align: center">신청수량</th>
+                            <th style="text-align: center">신청TG</th>
                             <th style="text-align: center">상태</th>
                         </tr>
                         </thead>

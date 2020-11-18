@@ -8,10 +8,10 @@ $(function () {
         if(confirm("교환비율을 저장하시겠습니까?") == false){
             return false;
         }
-
+        var exchangeGram = $("#gram").val();
         var exchangeRate = $("#tg").val();
         $.ajax({
-            url: api+'/exchangeRate/insert?exchangeRate='+exchangeRate,
+            url: api+'/exchangeRate/insert?exchangeRate='+exchangeRate+'&exchangeGram='+exchangeGram,
             type: 'post',
             dataType: 'json',
             success: function(response) {
@@ -222,6 +222,115 @@ $(function () {
             }
         });
     });
+    //교환비율 업데이트
+    $("#updateExchangeRate").click(function () {
+
+        if($('input:checkbox[name=exchangeRateAllCheck]:checked').length == 0){
+            alert("최소 1개 이상 선택해야 합니다.");
+            return false;
+        }else if($('input:checkbox[name=exchangeRateAllCheck]:checked').length > 1){
+            alert("1개씩 수정이 가능합니다.");
+            return false;
+        }
+
+        var exchageRateId = '';
+
+        $(".exchangeRateAllCheck").each(function () {
+            if($(this).is(":checked")) {
+                exchageRateId = $(this).val();
+            }
+        });
+
+        $.ajax({
+            url: api+'/exchangeRate/getOne?exchangeRateId='+exchageRateId,
+            type: 'get',
+            dataType: 'json',
+            success: function(response) {
+                console.log(response.data);
+                if(response.success){
+                    $("#gram1").val(response.data.exchangeRate.exchangeGram);
+                    $("#tg1").val(response.data.exchangeRate.exchangeRate);
+                    $("#exchangeRateId").val(response.data.exchangeRate.exchangeRateId);
+                    $('#myModal3').modal('show');
+
+                }else{
+                    alert("교환 비율 수정 실패");
+                }
+            },error: function(xhr, ajaxOptions, thrownError) {
+                alert("등록중 오류가 발생했습니다.");
+            }
+        });
+    });
+
+    //교환비율 수정
+    $("#updateRate").click(function () {
+        var exchangeGram = $("#gram1").val();
+        var exchangeRate = $("#tg1").val();
+        var exchangeRateId = $("#exchangeRateId").val();
+
+        if(exchangeGram == '' ){
+            alert("종류를 입력해주세요.");
+            return false;
+        }
+        if(exchangeRate == '' ){
+            alert("TG를 입력해주세요.");
+            return false;
+        }
+
+        if(confirm("교환비율을 수정하시겠습니까?") == false){
+            return false;
+        }
+
+        $.ajax({
+            url: api+'/exchangeRate/update?exchangeRate='+exchangeRate+'&exchangeGram='+exchangeGram+'&exchangeRateId='+exchangeRateId,
+            type: 'post',
+            dataType: 'json',
+            success: function(response) {
+                if(response.success){
+                    alert("수정되었습니다.");
+                    location.reload();
+                }else{
+                    alert(response.msg);
+                }
+            },error: function(xhr, ajaxOptions, thrownError) {
+                alert("수정중 오류가 발생했습니다.");
+            }
+        });
+
+    });
+
+    //교환비율 삭제
+    $("#deleteExchangeRate").click(function () {
+
+        if($('input:checkbox[name=exchangeRateAllCheck]:checked').length == 0){
+            alert("최소 1개 이상 선택해야 합니다.");
+            return false;
+        }
+
+        var chkValueArr = [];
+
+        $(".exchangeRateAllCheck").each(function () {
+            if($(this).is(":checked")) chkValueArr.push($(this).val());
+        });
+
+        $.ajax({
+            url: api+'/exchangeRate/delete?exchangeRateId='+chkValueArr,
+            type: 'post',
+            dataType: 'json',
+            success: function(response) {
+                if(response.success){
+                    alert("삭제되었습니다.");
+                    location.reload();
+                }else{
+                    alert("매장 활성화 실패");
+                }
+            },error: function(xhr, ajaxOptions, thrownError) {
+                alert("등록중 오류가 발생했습니다.");
+            }
+        });
+    });
+
+
 
     $("#updateActive").click(function () {
 
@@ -344,7 +453,7 @@ function getList() {
         dataType : 'JSON',
         success:function(response){
             console.log(response.data);
-            $("#tg").val(response.data.exchangeRate.exchangeRate);
+            // $("#tg").val(response.data.exchangeRate.exchangeRate);
             $("#walletAddress").val(response.data.depositAccount.account);
             var method = response.data.exchangeMethod.split(",");
             for(var i =0; i < method.length;i++){
@@ -387,6 +496,30 @@ function getList() {
                 $("#activeStoreList").empty();
                 $("#activeStoreList").append(html2);
             }
+
+            //교환비율
+            var exchangeRateList = response.data.exchangeRate;
+            console.log(exchangeRateList.length);
+            var html3 = "";
+            if(exchangeRateList.length > 0){
+                for (var i = 0; i < exchangeRateList.length; i++) {
+                    html3 += '<tr>'
+                        + '<td style="text-align: center;"><input class="exchangeRateAllCheck" name="exchangeRateAllCheck" type="checkbox" value="'+exchangeRateList[i].exchangeRateId+'" aria-label="..."></td>'
+                        + '<td style="text-align: center">' + exchangeRateList[i].exchangeGram + '</td>'
+                        + '<td style="text-align: center">' + exchangeRateList[i].exchangeRate + '</td>'
+                        + '</tr>';
+                }
+                $("#exchageRateList").empty();
+                $("#exchageRateList").append(html3);
+
+            }else{
+                var html3 = '<tr><td colspan="3" align="center">내역이 존재하지 않습니다.</td></tr>';
+                $("#exchageRateList").empty();
+                $("#exchageRateList").append(html3);
+            }
+
+
+
 
 
 

@@ -64,7 +64,9 @@
                             <th style="text-align: center">이메일</th>
                             <th style="text-align: center">이름</th>
                             <th style="text-align: center">연락처</th>
+                            <th style="text-align: center">신청상품</th>
                             <th style="text-align: center">신청수량</th>
+                            <th style="text-align: center">신청TG</th>
                             <th style="text-align: center">신청일</th>
                             <th style="text-align: center">종료일</th>
                             <th style="text-align: center">진행상황</th>
@@ -86,6 +88,16 @@
 <!-- ============================================================== -->
 <!-- End Page Content -->
 <!-- ============================================================== -->
+
+<table id="exchangeListByExeclTable" style="display:none;">
+    <thead>
+    <tr>
+        <th colspan="8" style="text-align: center">TGXC 금 교환 신청서</th>
+    </tr>
+    </thead>
+    <tbody id="exchangeListByExeclBody"></tbody>
+</table>
+
 </div>
 <!-- ============================================================== -->
 <!-- End Wrapper -->

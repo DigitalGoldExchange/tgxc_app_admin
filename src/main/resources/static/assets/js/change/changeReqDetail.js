@@ -6,13 +6,23 @@ $(function () {
 
     $("#identifyImage").on("show.bs.modal",function(event){
         var button = $(event.relatedTarget);
-        var upload_file = button.data("originimg");
-        $("#identify_img").attr("src",api+"/uploads/"+upload_file);
+        var file = api+"/uploads/"+button.data("originimg");
+        console.log(file);
+        var key  = '123456789abcdefg';
+        var upload_file = CryptoJS.AES.decrypt(file, key,{
+            mode: CryptoJS.mode.ECB,
+            padding:CryptoJS.pad.Pkcs5
+        });
+
+        // var upload_file = button.data("originimg");
+        $("#identify_img").attr("src",upload_file);
     });
 
     $("#faceImage").on("show.bs.modal",function(event){
         var button = $(event.relatedTarget);
         var upload_file = button.data("originimg");
+        var file = api+"/uploads/"+button.data("originimg");
+        console.log(file);
         $("#face_img").attr("src",api+"/uploads/"+upload_file);
     });
 });
@@ -134,6 +144,8 @@ function getList() {
                     + '<td style="text-align: center">' + exchangeInfo.user.emailId + '</td>'
                     + '<td style="text-align: center">' + exchangeInfo.user.name + '</td>'
                     + '<td style="text-align: center">' + phoneNumber + '</td>'
+                    + '<td style="text-align: center">' + exchangeInfo.reqType + '</td>'
+                    + '<td style="text-align: center">' + exchangeInfo.reqQty + '</td>'
                     + '<td style="text-align: center">' + exchangeInfo.amount + '</td>'
                     + '<td style="text-align: center">' + moment(exchangeInfo.createDatetime).format('YYYY-MM-DD') + '</td>'
                     + '<td style="text-align: center">' + endDay + '</td>'
@@ -152,12 +164,12 @@ function getList() {
                                     </select></td>';
                         }
                             html += '</tr>\
-                            <tr><td colspan="9" align="right">\
+                            <tr><td colspan="11" align="right">\
                                 <button type="button" class="btn-total-view" data-toggle="modal" data-target="#identifyImage" data-originimg="'+exchangeImage.identifyCardPath+'"><span>신분증사진</span></button>\
                                 <button type="button" class="btn-total-view" data-toggle="modal" data-target="#faceImage" data-originimg="'+exchangeImage.profileImagePath+'"><span>얼굴사진</span></button>\
                                 </td></tr>';
                       if(exchangeInfo.status == "반려"){
-                          html += '<tr><td colspan="9" align="right">반려사유 : '+exchangeInfo.note+'</td></tr>';
+                          html += '<tr><td colspan="11" align="right">반려사유 : '+exchangeInfo.note+'</td></tr>';
                       }
 
                 $("#changeReqDetail").empty();
@@ -193,6 +205,8 @@ function getList() {
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + reqNumber + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + moment(exchangeList[i].createDatetime).format('YYYY-MM-DD') + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + endDay + '</td>'
+                            + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + exchangeList[i].reqType + '</td>'
+                            + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + exchangeList[i].reqQty + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + exchangeList[i].amount + '</td>'
                             + '<td style="text-align: center" onclick="goChangeReqDetail('+exchangeList[i].exchangeId+')">' + userStatus + '</td>'
                             + '</tr>';
