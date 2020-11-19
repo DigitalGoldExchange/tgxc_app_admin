@@ -8,6 +8,9 @@
 <script src="/assets/js/moment_timezone.js"></script>
 <#--<script src="/assets/summernote/summernote.js"></script>-->
 <script src="/assets/js/script.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/aes.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+<script type="text/javascript" src="//unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 
 <!-- All Jquery -->
 <!-- ============================================================== -->
