@@ -52,10 +52,44 @@ function doReject(exchangeId) {
     });
 }
 
+function doExcelDownLoad(exchangeId) {
+
+    if(confirm("신청서를 다운로드 하시겠습니까?") == false){
+        return false;
+    }
+
+    var api = $("#apiAddress").val();
+
+    var req = new XMLHttpRequest();
+    req.open("GET", api+'/excel/excelDown?exchangeId='+exchangeId, true);
+    req.responseType = "blob";
+    req.onload = function (event) {
+        var blob = req.response;
+        // var fileName = req.getResponseHeader("fileName") //if you have the fileName header available
+        var fileName = "exchange_form.pdf";
+        var link=document.createElement('a');
+        link.href=window.URL.createObjectURL(blob);
+        link.download=fileName;
+        link.click();
+    };
+
+    req.send();
+
+    location.reload();
+
+
+
+}
+
 
 function updateStatus(exchangeId, status) {
 
     var api = $("#apiAddress").val();
+
+    if(status == "다운"){
+        doExcelDownLoad(exchangeId);
+        return false;
+    }
 
     if(status == "반려"){
         doReject(exchangeId);
@@ -148,7 +182,7 @@ function getList() {
                         }else{
                             html += '<select id="reqStatus" name="reqStatus" onchange="updateStatus('+exchangeInfo.exchangeId+', this.value)">\
                                         <option>작업</option>\
-                                        <option value="0">신청서다운로드</option>\
+                                        <option value="다운">신청서다운로드</option>\
                                         <option value="완료">완료</option>\
                                         <option value="승인">승인</option>\
                                         <option value="반려">반려</option>\

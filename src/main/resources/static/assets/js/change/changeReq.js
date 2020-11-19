@@ -73,7 +73,7 @@ function doExcelDownLoad(exchangeId) {
     };
 
     req.send();
-
+    location.reload();
     // $.ajax({
     //     url: api+'/excel/excelDown?exchangeId='+exchangeId,
     //     type: 'get',
