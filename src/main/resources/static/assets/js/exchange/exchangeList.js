@@ -448,7 +448,7 @@ function getList() {
     var api = $("#apiAddress").val();
     console.log(api);
     $.ajax({
-        url : api+"/exchangeRate/getList",
+        url : api+"/exchangeRate/getList1",
         type : 'GET',
         dataType : 'JSON',
         success:function(response){
