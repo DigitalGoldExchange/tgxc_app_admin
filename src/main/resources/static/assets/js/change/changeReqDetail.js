@@ -75,7 +75,6 @@ function doExcelDownLoad(exchangeId) {
 
     req.send();
 
-    location.reload();
 
 
 
