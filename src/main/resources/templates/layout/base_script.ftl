@@ -34,7 +34,7 @@
 <script src="/assets/js/custom.min.js"></script>
 <#--<script src="/assets/js2/dashboard1.js"></script>-->
 <#--<script src="/assets/plugins/bower_components/toast-master/js/jquery.toast.js"></script>-->
-<script type="text/javascript" src="http://botmonster.com/jquery-bootpag/jquery.bootpag.js"></script>
+<script type="text/javascript" src="https://botmonster.com/jquery-bootpag/jquery.bootpag.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
