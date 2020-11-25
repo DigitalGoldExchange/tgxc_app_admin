@@ -37,7 +37,7 @@ $(function () {
 });
 
 function goMain() {
-    document.location.href = "/change/changeReq";
+    document.location.href = "/admin/home";
 }
 
 

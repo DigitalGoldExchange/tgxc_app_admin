@@ -35,16 +35,12 @@ public class MainController {
             @RequestParam(value = "language", required = false) String language,
             HttpServletRequest request) {
         HttpSession session = request.getSession();
+
         Locale locales = null;
-        System.out.println("language:"+language);
         if("en".equals(language)){
-            System.out.println("ENGLISH");
             locales = Locale.ENGLISH;
-            System.out.println("11111:"+locales);
         }else{
-            System.out.println("KOREA");
             locales = Locale.KOREA;
-            System.out.println("22222:"+locales);
         }
         session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME,locales);
 

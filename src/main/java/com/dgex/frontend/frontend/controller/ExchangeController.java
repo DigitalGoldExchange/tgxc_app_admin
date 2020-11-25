@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class ExchangeController {
 
@@ -13,9 +15,13 @@ public class ExchangeController {
     private String apiAddress;
 
     @RequestMapping(value = "/exchange/exchangeList", method = RequestMethod.GET)
-    public ModelAndView exchangeList(ModelAndView mav) {
-        mav.addObject("apiAddress",apiAddress);
-        mav.setViewName("/exchange/exchangeList");
+    public ModelAndView exchangeList(ModelAndView mav, HttpServletRequest request) {
+        if(request.getHeader("REFERER") == null){
+            mav.setViewName("redirect:/login");
+        }else{
+            mav.addObject("apiAddress",apiAddress);
+            mav.setViewName("/exchange/exchangeList");
+        }
         return mav;
     }
 }
