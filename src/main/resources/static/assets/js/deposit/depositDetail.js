@@ -287,5 +287,5 @@ function getList() {
 }
 
 function goMain() {
-    document.location.href = "/deposit/depositList";
+    document.location.href = "/admin/home";
 }
