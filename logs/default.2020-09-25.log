@@ -1,0 +1,23 @@
+15:05:56 - Starting FrontendApplication on laidbackui-MacBook-Pro.local with PID 2477 (/Users/laidback_tony/IdeaProjects/dgex_frontend/build/classes/java/main started by laidback_tony in /Users/laidback_tony/IdeaProjects/dgex_frontend) 
+15:05:56 - The following profiles are active: dev 
+15:05:56 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+15:05:56 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+15:05:57 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3a5e0da0' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+15:05:57 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+15:05:57 - Tomcat initialized with port(s): 8094 (http) 
+15:05:57 - Initializing ProtocolHandler ["http-nio-8094"] 
+15:05:57 - Starting service [Tomcat] 
+15:05:57 - Starting Servlet engine: [Apache Tomcat/9.0.36] 
+15:05:58 - Initializing Spring embedded WebApplicationContext 
+15:05:58 - Root WebApplicationContext: initialization completed in 1626 ms 
+15:05:58 - 
+
+Using generated security password: ff0b2f52-287f-4c6b-83b5-97600f9dda73
+ 
+15:05:58 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69c00c56, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e2ad8ea, org.springframework.security.web.header.HeaderWriterFilter@590ecb2c, org.springframework.security.web.authentication.logout.LogoutFilter@259412d6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@70b6352a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f782afa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@384dd2c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2332d80b, org.springframework.security.web.session.SessionManagementFilter@51a72880, org.springframework.security.web.access.ExceptionTranslationFilter@30f9389f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@39e7d79a] 
+15:05:59 - Initializing ExecutorService 'applicationTaskExecutor' 
+15:05:59 - LiveReload server is running on port 35729 
+15:05:59 - Starting ProtocolHandler ["http-nio-8094"] 
+15:05:59 - Tomcat started on port(s): 8094 (http) with context path '' 
+15:05:59 - Started FrontendApplication in 3.848 seconds (JVM running for 4.631) 
+18:14:12 - Shutting down ExecutorService 'applicationTaskExecutor' 

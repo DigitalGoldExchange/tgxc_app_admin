@@ -1,0 +1,134 @@
+16:49:15 - Starting FrontendApplication on laidbackui-MacBook-Pro.local with PID 1666 (/Users/laidback_tony/IdeaProjects/dgex_frontend/build/classes/java/main started by laidback_tony in /Users/laidback_tony/IdeaProjects/dgex_frontend) 
+16:49:15 - The following profiles are active: dev 
+16:49:15 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+16:49:15 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+16:49:17 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@10563834' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+16:49:17 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+16:49:17 - Tomcat initialized with port(s): 8094 (http) 
+16:49:17 - Initializing ProtocolHandler ["http-nio-8094"] 
+16:49:17 - Starting service [Tomcat] 
+16:49:17 - Starting Servlet engine: [Apache Tomcat/9.0.36] 
+16:49:17 - Initializing Spring embedded WebApplicationContext 
+16:49:17 - Root WebApplicationContext: initialization completed in 1775 ms 
+16:49:18 - 
+
+Using generated security password: e3cf76ad-f53c-44be-82ea-77f390d5e0f5
+ 
+16:49:18 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@52376cea, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d44c6a, org.springframework.security.web.header.HeaderWriterFilter@32aa7fc, org.springframework.security.web.authentication.logout.LogoutFilter@1aebe740, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@491bd470, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b968882, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@146a9e0c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f29d1b7, org.springframework.security.web.session.SessionManagementFilter@5955a678, org.springframework.security.web.access.ExceptionTranslationFilter@711de1a9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3dc14bf1] 
+16:49:18 - Initializing ExecutorService 'applicationTaskExecutor' 
+16:49:19 - LiveReload server is running on port 35729 
+16:49:19 - Starting ProtocolHandler ["http-nio-8094"] 
+16:49:19 - Tomcat started on port(s): 8094 (http) with context path '' 
+16:49:19 - Started FrontendApplication in 4.2 seconds (JVM running for 5.078) 
+16:50:42 - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+16:50:42 - Initializing Servlet 'dispatcherServlet' 
+16:50:42 - Completed initialization in 14 ms 
+16:50:42 - 
+/ ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/
+/ ===============================================> end1 [0.061 Sec] 
+ 
+16:50:42 - 
+/assets/js/script.js ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/js/script.js
+/assets/js/script.js ===============================================> end1 [0.013 Sec] 
+ 
+16:50:42 - 
+/assets/js/jquery-3.4.1.min.js ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/js/jquery-3.4.1.min.js
+/assets/js/jquery-3.4.1.min.js ===============================================> end1 [0.014 Sec] 
+ 
+16:50:42 - 
+/favicon.ico ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/favicon.ico
+/favicon.ico ===============================================> end1 [0.001 Sec] 
+ 
+16:50:42 - 
+/error ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/error
+/error ===============================================> end1 [0.082 Sec] 
+ 
+16:50:42 - 
+/login ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/login
+/login ===============================================> end1 [0.123 Sec] 
+ 
+16:50:42 - 
+/assets/css/login_style.css ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/css/login_style.css
+/assets/css/login_style.css ===============================================> end1 [0.003 Sec] 
+ 
+16:50:42 - 
+/assets/css/login_bootstrap.css ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/css/login_bootstrap.css
+/assets/css/login_bootstrap.css ===============================================> end1 [0.005 Sec] 
+ 
+16:50:42 - 
+/assets/js/jquery-3.4.1.min.js ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/js/jquery-3.4.1.min.js
+/assets/js/jquery-3.4.1.min.js ===============================================> end1 [0.006 Sec] 
+ 
+16:50:42 - 
+/assets/js/script.js ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/js/script.js
+/assets/js/script.js ===============================================> end1 [0.003 Sec] 
+ 
+16:50:42 - 
+/assets/js/main/login.js ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/js/main/login.js
+/assets/js/main/login.js ===============================================> end1 [0.002 Sec] 
+ 
+16:50:43 - 
+/assets/images/laidback_logo_B.png ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/assets/images/laidback_logo_B.png
+/assets/images/laidback_logo_B.png ===============================================> end1 [0.005 Sec] 
+ 
+16:50:43 - 
+/static/assets/delete/css/bootstrap.min.css ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/static/assets/delete/css/bootstrap.min.css
+/static/assets/delete/css/bootstrap.min.css ===============================================> end1 [0.002 Sec] 
+ 
+16:50:43 - 
+/error ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/error
+/error ===============================================> end1 [0.001 Sec] 
+ 
+17:07:01 - 
+/swagger-ui.html ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/swagger-ui.html
+/swagger-ui.html ===============================================> end1 [0.001 Sec] 
+ 
+17:07:02 - 
+/error ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/error
+/error ===============================================> end1 [0.016 Sec] 
+ 
+17:07:20 - 
+/swagger-ui.html ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/swagger-ui.html
+/swagger-ui.html ===============================================> end1 [0.002 Sec] 
+ 
+17:07:20 - 
+/error ===============================================> start1 
+     request.getMethod() ===>GET
+     request.getRequestURL() ===>http://localhost:8094/error
+/error ===============================================> end1 [0.006 Sec] 
+ 
+17:09:03 - Shutting down ExecutorService 'applicationTaskExecutor' 
